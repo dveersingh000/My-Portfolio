@@ -8,7 +8,7 @@
 
 - 💡 Always open to collaborating on projects and innovative ideas.
 
-- 💻 [Click here](https://dveersingh000.github.io/dharamveer-here/) to see my portfolio .
+- 💻 [Click here](https://dveersingh000.github.io/My-Portfolio/) to see my portfolio .
 - 😎 Enjoy my repositories here.
 
 <p>
