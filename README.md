@@ -2,7 +2,7 @@
 
 # Hey!! Great to see you here!
 
-- 📖 I'm a Software Developer who likes to tinker with code.
+- 📖 I'm a Full Stack Web Developer who likes to tinker with code.
 
 - 🧑🏻‍💻 Self-motivated, extremely passionate, and open source lover.
 
