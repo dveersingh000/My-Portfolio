@@ -741,14 +741,8 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
 }
 
 .floating-actions { display: contents; }
-.floating-actions #themeToggle { position: fixed; right: 96px; bottom: 82px; z-index: 9999; }
-.floating-actions #toTop { position: fixed; right: 96px; bottom: 24px; z-index: 9999; }
-
-/* Wide screens have empty margins either side of the card: use the left one */
-@media (min-width: 1500px) {
-  .floating-actions #themeToggle { right: auto; left: 24px; top: 16px; bottom: auto; }
-  .floating-actions #toTop { right: auto; left: 24px; bottom: 24px; }
-}
+.floating-actions #themeToggle { position: fixed; left: 24px; top: 16px; z-index: 9999; }
+.floating-actions #toTop { position: fixed; left: 24px; bottom: 24px; z-index: 9999; }
 
 .floating-actions button {
   width: 48px;
