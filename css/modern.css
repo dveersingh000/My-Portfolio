@@ -641,6 +641,13 @@ body.home-body .portfolio-section .portfolio-block .hvr-upper .theme-btn:hover {
 
 body.home-body .portfolio-section .portfolio-block .title { font-size: 17px; font-weight: 600; }
 
+body.home-body .portfolio-section .portfolio-block .work-desc {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* ---------- Contact ---------- */
 body.home-body .contact-content .upper-text h4,
 body.home-body .contact-content .form-box h4 { color: var(--heading); }
