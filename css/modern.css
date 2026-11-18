@@ -104,8 +104,9 @@ body.home-body.grey-left-bar .left-bar .left-inner {
   border: 1px solid var(--border);
   border-radius: 32px 0 0 32px;
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
+
+body.home-body.grey-left-bar .main-nav .navigation li:last-child a { border-bottom-left-radius: 32px; }
 
 body.home-body .left-bar .left-upper .image img {
   border: 4px solid transparent;
@@ -795,6 +796,131 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
   body.home-body .left-bar .left-upper .info .designation .dot { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Refinements ---------- */
+
+/* Social menu must paint above the right panel (left bar is already sticky with a z-index) */
+
+body.home-body .left-bar .social-links .links {
+  background: var(--bg-soft);
+  border-radius: 0 10px 10px 0;
+  box-shadow: var(--shadow);
+}
+
+body.home-body .left-bar .social-links .links li a { color: var(--heading); }
+
+/* Skill cards: remove the light box that hid the labels */
+body.home-body .skills .skill-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 6px 8px;
+  transition: transform 0.35s ease, border-color 0.3s, box-shadow 0.35s;
+}
+
+body.home-body .skills .skill-block:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 30px -20px var(--accent);
+}
+
+body.home-body .skills .skill-block .skill-block-inner { background: transparent; }
+
+body.home-body .skills .skill-block .skill-title {
+  color: var(--heading);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  padding-right: 52px;
+}
+
+body.home-body .skills .skill-block .count-box {
+  background: var(--bg-soft);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+/* Resume section titles: no more white label and cut-through lines */
+body.home-body .resume-content .awards,
+body.home-body .resume-content .expertise,
+body.home-body .resume-content .education,
+body.home-body .resume-content .interests {
+  border: 0;
+  margin-bottom: 40px;
+}
+
+body.home-body .resume-content .awards .main-title,
+body.home-body .resume-content .expertise .main-title,
+body.home-body .resume-content .education .main-title,
+body.home-body .resume-content .interests .main-title {
+  position: relative;
+  left: 0;
+  top: 0;
+  background: transparent;
+  padding: 0 0 0 62px;
+  height: 44px;
+  line-height: 44px;
+  margin-bottom: 22px;
+}
+
+body.home-body .resume-content .main-title .icon { left: 0; }
+body.home-body .resume-content .main-title .icon img { max-height: 44px; padding: 8px; filter: invert(1) brightness(1.2); }
+:root[data-theme="light"] body.home-body .resume-content .main-title .icon img { filter: none; }
+body.home-body .resume-content .main-title .txt { color: var(--heading); letter-spacing: 0.06em; }
+
+body.home-body .resume-content .edu-block,
+body.home-body .resume-content .award-block,
+body.home-body .resume-content .expertise-block,
+body.home-body .resume-content .interest-block { border: 0; }
+
+/* Certification cards: date badge in normal flow instead of a rotated overlay */
+body.home-body .resume-content .award-block .inner-box { padding: 30px; }
+
+body.home-body .resume-content .award-block .date {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  transform: none;
+  margin-bottom: 12px;
+}
+
+body.home-body .resume-content .award-block .date span {
+  display: inline-block;
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+
+/* Language dials */
+body.home-body .language-block .graph-outer { background: var(--card); border: 1px solid var(--border); }
+
+body.home-body .language-block .graph-outer .count-box {
+  background: var(--bg-soft);
+  color: var(--heading);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+body.home-body .language-block .graph-outer .count-box .count-text { color: var(--heading); }
+
+/* Weekend mode switch */
+body.home-body .mode-switch .switcher .switch-btn .btn-inner { background: var(--card-hover); border-color: var(--border); }
+body.home-body .mode-switch .switcher .switch-btn .circle { background: var(--muted); border-color: var(--border); }
+body.home-body .mode-switch .switcher .left-text { color: var(--muted); }
+
+/* Orange accents that relied on the old white background */
+body.home-body .contact-content .info-block .text,
+body.home-body .contact-content .info-block .text a { color: var(--heading); }
+body.home-body .contact-content .upper-text .text { color: var(--text); }
+body.home-body .resume-content .expertise-block h5,
+body.home-body .interest-block h5 { color: var(--heading); }
+body.home-body .portfolio-section .portfolio-block .hover-box,
+body.home-body .portfolio-section .portfolio-block .hover-box .title,
+body.home-body .portfolio-section .portfolio-block .hover-box .category { color: #fff; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 991px) {
