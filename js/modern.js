@@ -39,9 +39,22 @@
     body.appendChild(actions);
 
     function paintThemeIcon() {
-      themeBtn.innerHTML = root.getAttribute("data-theme") === "dark" ? "&#9728;" : "&#9790;";
+      var dark = root.getAttribute("data-theme") === "dark";
+      themeBtn.innerHTML = '<span class="ti">' + (dark ? "&#9728;" : "&#9790;") + "</span><span>" + (dark ? "Light mode" : "Dark mode") + "</span>";
     }
     paintThemeIcon();
+
+    /* Sticky sidebar: let it scroll with the page until its bottom is reachable */
+    var leftBar = document.querySelector(".left-bar");
+    function fitSidebar() {
+      if (!leftBar) return;
+      if (window.innerWidth <= 991) { leftBar.style.top = ""; return; }
+      var overflow = window.innerHeight - leftBar.offsetHeight;
+      leftBar.style.top = (overflow < 0 ? overflow - 20 : 0) + "px";
+    }
+    fitSidebar();
+    window.addEventListener("resize", fitSidebar);
+    window.addEventListener("load", fitSidebar);
 
     themeBtn.addEventListener("click", function () {
       var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
