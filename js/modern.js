@@ -139,7 +139,7 @@
 
     /* Reveal on scroll */
     var targets = document.querySelectorAll(
-      ".welcome, .stats-row, .skills-column, .expertise-column, .feature-block, .language-block, " +
+      ".welcome, .stats-row, .prof-card, .tech-card, .skills-column, .expertise-column, .feature-block, .language-block, " +
       ".main-title, .edu-block, .award-block, .expertise-block, .interest-block, .page-title, " +
       ".filters, .info-block, .form-box, .upper-text"
     );
@@ -163,7 +163,7 @@
 
     /* Spotlight hover on cards */
     document.querySelectorAll(
-      ".feature-block .inner-box, .edu-block .inner-box, .award-block .inner-box, .expertise-block .inner-box, .stat-card"
+      ".feature-block .inner-box, .edu-block .inner-box, .award-block .inner-box, .expertise-block .inner-box, .prof-card .inner-box, .tech-card .inner-box, .stat-card"
     ).forEach(function (card) {
       card.classList.add("spot");
       card.addEventListener("mousemove", function (e) {

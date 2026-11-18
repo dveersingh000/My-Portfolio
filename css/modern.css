@@ -980,3 +980,80 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
   body.home-body .right-content .welcome h4 { font-size: 24px; }
   .floating-actions { right: 14px; bottom: 14px; }
 }
+
+
+/* ---------- Round 3: spacing, proficiency + tech cards ---------- */
+body.home-body .resume-content { padding: 0 50px 10px; }
+body.home-body .resume-content .page-title.sec-title { margin-left: -50px; margin-right: -50px; }
+body.home-body .about-me { padding: 10px 50px 0; }
+body.home-body .about-me h4 {
+  position: relative; padding-bottom: 10px; margin-bottom: 22px; color: var(--heading);
+}
+body.home-body .about-me h4::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 36px; height: 3px; border-radius: 3px; background: var(--grad);
+}
+body.home-body .proficiency, body.home-body .tech-skills { margin-bottom: 36px; }
+
+body.home-body .prof-card, body.home-body .tech-card { padding: 0 10px 20px; }
+body.home-body .prof-card .inner-box, body.home-body .tech-card .inner-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 26px 22px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1), border-color 0.3s, box-shadow 0.4s;
+}
+body.home-body .prof-card .inner-box:hover, body.home-body .tech-card .inner-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 24px 44px -24px var(--accent);
+}
+
+.prof-ring {
+  --size: 92px;
+  width: var(--size); height: var(--size); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: conic-gradient(var(--accent) 0 calc(var(--p) * 1%), var(--border) 0);
+  position: relative; margin-bottom: 18px; font-size: 38px;
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+.prof-ring::before {
+  content: ""; position: absolute; inset: 7px; border-radius: 50%; background: var(--bg-soft, #12131c);
+}
+.prof-ring i { position: relative; z-index: 1; }
+.prof-card .inner-box:hover .prof-ring { transform: rotate(-8deg) scale(1.08); }
+.prof-title { font-size: 19px; font-weight: 700; color: var(--heading); }
+.prof-sub { font-size: 14px; color: var(--muted); margin: 2px 0 16px; }
+.prof-bar { height: 8px; border-radius: 8px; background: var(--border); overflow: hidden; }
+.prof-bar span {
+  display: block; height: 100%; width: 0; border-radius: 8px; background: var(--grad);
+  box-shadow: 0 0 14px var(--glow); transition: width 1.4s cubic-bezier(.2,.8,.2,1) 0.3s;
+}
+.prof-card.in .prof-bar span, .prof-card:not(.reveal) .prof-bar span { width: var(--w); }
+.prof-val { position: absolute; top: 22px; right: 22px; font-size: 22px; font-weight: 700; color: var(--accent); }
+
+.tech-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.tech-head h5 { margin: 0; font-size: 18px; font-weight: 700; color: var(--heading); }
+.tech-ico {
+  width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-size: 24px; background: var(--bg-soft, rgba(255,255,255,.06)); border: 1px solid var(--border);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px;
+  font-size: 13px; font-weight: 500; color: var(--text);
+  background: var(--bg-soft, rgba(255,255,255,.05)); border: 1px solid var(--border);
+  transition: transform 0.25s ease, border-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+.chip i { font-size: 16px; }
+.chip:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--accent); box-shadow: 0 8px 18px -10px var(--accent); }
+:root[data-theme="dark"] .chip .devicon-express-original,
+:root[data-theme="dark"] .chip .devicon-linux-plain { color: #e6e8f0; }
+
+@media (max-width: 991px) {
+  body.home-body .resume-content { padding: 0 20px 10px; }
+  body.home-body .resume-content .page-title.sec-title { margin-left: -20px; margin-right: -20px; }
+  body.home-body .about-me { padding: 10px 20px 0; }
+}

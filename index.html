@@ -12,6 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
 <link href="css/modern.css" rel="stylesheet">
 
 
@@ -166,47 +167,95 @@
                                 </div>
 
                                 <!--About Me-->
-                                 <div class="expertise">
-                                        <h4>Skills</h4>
-                                    <div class="row clearfix">
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> React.js, Redux, Context API </li>
-                                                    <li> JavaScript (ES6+) </li>
-                                                    <li> HTML5, CSS3, Material UI </li>
-                                                    <li> React Testing Library </li>
-                                                </ul>
+                                <div class="about-me">
+
+                                    <!--Proficiency-->
+                                    <div class="proficiency">
+                                        <h4>Proficiency</h4>
+                                        <div class="row clearfix">
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:85">
+                                                        <i class="devicon-react-original colored"></i>
+                                                    </div>
+                                                    <div class="prof-title">Full Stack Developer</div>
+                                                    <div class="prof-sub">React &amp; Node.js</div>
+                                                    <div class="prof-bar"><span style="--w:85%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="85">0</span>%</div>
+                                                </div>
+                                            </div>
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:75">
+                                                        <i class="devicon-docker-plain colored"></i>
+                                                    </div>
+                                                    <div class="prof-title">DevOps Engineer</div>
+                                                    <div class="prof-sub">AWS, Docker, Kubernetes, CI/CD</div>
+                                                    <div class="prof-bar"><span style="--w:75%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="75">0</span>%</div>
+                                                </div>
+                                            </div>
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:76">
+                                                        <i class="devicon-javascript-plain colored"></i>
+                                                    </div>
+                                                    <div class="prof-title">Frontend Developer</div>
+                                                    <div class="prof-sub">React, JavaScript, Tailwind CSS</div>
+                                                    <div class="prof-bar"><span style="--w:76%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="76">0</span>%</div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> Node.js, Express.js </li>
-                                                    <li> REST APIs, JWT </li>
-                                                    <li> MongoDB, PostgreSQL </li>
-                                                    <li> Validation &amp; Error Handling </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> AWS: EC2, IAM, VPC, S3, EKS, CloudWatch </li>
-                                                    <li> Docker, Kubernetes, Terraform, Ansible </li>
-                                                    <li> Jenkins, Maven, Git/GitHub </li>
-                                                    <li> Linux, Shell Scripting </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
                                     </div>
-                                </div>
+
+                                    <!--Skills-->
+                                    <div class="tech-skills">
+                                        <h4>Skills</h4>
+                                        <div class="row clearfix">
+                                            <div class="tech-card col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-react-original colored"></i></span><h5>Frontend</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-react-original colored"></i>React.js</span>
+                                                        <span class="chip"><i class="devicon-redux-original colored"></i>Redux</span>
+                                                        <span class="chip"><i class="devicon-javascript-plain colored"></i>JavaScript ES6+</span>
+                                                        <span class="chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                                                        <span class="chip"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                                                        <span class="chip"><i class="devicon-materialui-plain colored"></i>Material UI</span>
+                                                        <span class="chip"><i class="devicon-tailwindcss-original colored"></i>Tailwind</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tech-card col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-nodejs-plain colored"></i></span><h5>Backend &amp; Data</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                                                        <span class="chip"><i class="devicon-express-original"></i>Express.js</span>
+                                                        <span class="chip"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                                                        <span class="chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                                                        <span class="chip"><i class="devicon-postman-plain colored"></i>REST APIs</span>
+                                                        <span class="chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tech-card col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span><h5>Cloud &amp; DevOps</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
+                                                        <span class="chip"><i class="devicon-docker-plain colored"></i>Docker</span>
+                                                        <span class="chip"><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
+                                                        <span class="chip"><i class="devicon-terraform-plain colored"></i>Terraform</span>
+                                                        <span class="chip"><i class="devicon-jenkins-line colored"></i>Jenkins</span>
+                                                        <span class="chip"><i class="devicon-git-plain colored"></i>Git/GitHub</span>
+                                                        <span class="chip"><i class="devicon-linux-plain"></i>Linux</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!--Features-->
                                     <div class="features">
