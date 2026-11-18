@@ -778,20 +778,28 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
 }
 
 .floating-actions #themeToggle {
-  width: auto;
-  height: 46px;
-  padding: 0 18px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   border-radius: 999px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  overflow: hidden;
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
+  transition: width 0.35s cubic-bezier(.2,.8,.2,1), padding 0.35s, background 0.3s, color 0.3s, transform 0.3s;
 }
 
-.floating-actions #themeToggle .ti { font-size: 18px; }
-.floating-actions { align-items: flex-end; }
+.floating-actions #themeToggle .ti { font-size: 18px; flex: none; width: 48px; text-align: center; }
+.floating-actions #themeToggle .tl { max-width: 0; opacity: 0; overflow: hidden; transition: max-width 0.35s ease, opacity 0.25s ease; }
+.floating-actions #themeToggle:hover,
+.floating-actions #themeToggle:focus-visible { width: 140px; justify-content: flex-start; }
+.floating-actions #themeToggle:hover .tl,
+.floating-actions #themeToggle:focus-visible .tl { max-width: 100px; opacity: 1; padding-right: 14px; }
+.floating-actions { align-items: flex-end; gap: 16px; }
+.scroll-to-top { display: none !important; }
 
 /* Skills cards moved into the home section */
 body.home-body .about-me .expertise-block { padding: 0 8px 16px; }

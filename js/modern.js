@@ -40,7 +40,7 @@
 
     function paintThemeIcon() {
       var dark = root.getAttribute("data-theme") === "dark";
-      themeBtn.innerHTML = '<span class="ti">' + (dark ? "&#9728;" : "&#9790;") + "</span><span>" + (dark ? "Light mode" : "Dark mode") + "</span>";
+      themeBtn.innerHTML = '<span class="ti">' + (dark ? "&#9728;" : "&#9790;") + '</span><span class="tl">' + (dark ? "Light mode" : "Dark mode") + "</span>";
     }
     paintThemeIcon();
 
