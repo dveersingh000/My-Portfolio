@@ -20,6 +20,19 @@
   document.addEventListener("DOMContentLoaded", function () {
     var body = document.body;
 
+    /* Feature cards open the Work section with the matching filter */
+    document.querySelectorAll("[data-work-filter]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var filter = document.querySelector(
+          'li.filter[data-filter="' + link.getAttribute("data-work-filter") + '"]'
+        );
+        if (filter) filter.click();
+        var work = document.getElementById("work-section");
+        if (work) work.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
     /* Scroll progress bar */
     var bar = el("div", "scroll-progress");
     body.appendChild(bar);
