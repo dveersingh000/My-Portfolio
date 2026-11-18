@@ -603,12 +603,11 @@ body.home-body .mixitup-gallery .filters .filter:hover {
 
 body.home-body .portfolio-section .portfolio-block .inner-box {
   border-radius: 16px;
-  transition: transform 0.15s ease-out, box-shadow 0.4s ease;
-  transform-style: preserve-3d;
-  will-change: transform;
+  transition: transform 0.25s ease, box-shadow 0.4s ease;
 }
 
 body.home-body .portfolio-section .portfolio-block .inner-box:hover {
+  transform: translateY(-4px);
   box-shadow: 0 28px 50px -22px var(--accent);
 }
 
@@ -647,6 +646,17 @@ body.home-body .portfolio-section .portfolio-block .hover-box {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transform: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+
+body.home-body .portfolio-section .portfolio-block .inner-box:hover .hover-box,
+body.home-body .portfolio-section .portfolio-block .inner-box:focus-within .hover-box {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0s;
 }
 
 body.home-body .portfolio-section .portfolio-block .hvr-upper {

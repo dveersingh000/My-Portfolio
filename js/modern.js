@@ -173,17 +173,6 @@
       });
     });
 
-    /* 3D tilt on project cards */
-    if (finePointer && !reduceMotion) {
-      document.querySelectorAll(".portfolio-block .inner-box").forEach(function (card) {
-        card.addEventListener("mousemove", function (e) {
-          var b = card.getBoundingClientRect();
-          var x = (e.clientX - b.left) / b.width - 0.5;
-          var y = (e.clientY - b.top) / b.height - 0.5;
-          card.style.transform = "perspective(800px) rotateX(" + (-y * 10) + "deg) rotateY(" + (x * 12) + "deg) translateY(-6px)";
-        });
-        card.addEventListener("mouseleave", function () { card.style.transform = ""; });
-      });
-    }
+    /* Project cards use a CSS-only lift on hover; a JS tilt made hover and clicks flaky */
   });
 })();
