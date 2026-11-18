@@ -20,6 +20,19 @@
   document.addEventListener("DOMContentLoaded", function () {
     var body = document.body;
 
+    /* Feature cards open the Work section with the matching filter */
+    document.querySelectorAll("[data-work-filter]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var filter = document.querySelector(
+          'li.filter[data-filter="' + link.getAttribute("data-work-filter") + '"]'
+        );
+        if (filter) filter.click();
+        var work = document.getElementById("work-section");
+        if (work) work.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
     /* Scroll progress bar */
     var bar = el("div", "scroll-progress");
     body.appendChild(bar);
@@ -173,17 +186,6 @@
       });
     });
 
-    /* 3D tilt on project cards */
-    if (finePointer && !reduceMotion) {
-      document.querySelectorAll(".portfolio-block .inner-box").forEach(function (card) {
-        card.addEventListener("mousemove", function (e) {
-          var b = card.getBoundingClientRect();
-          var x = (e.clientX - b.left) / b.width - 0.5;
-          var y = (e.clientY - b.top) / b.height - 0.5;
-          card.style.transform = "perspective(800px) rotateX(" + (-y * 10) + "deg) rotateY(" + (x * 12) + "deg) translateY(-6px)";
-        });
-        card.addEventListener("mouseleave", function () { card.style.transform = ""; });
-      });
-    }
+    /* Project cards use a CSS-only lift on hover; a JS tilt made hover and clicks flaky */
   });
 })();
