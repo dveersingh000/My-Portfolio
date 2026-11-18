@@ -740,16 +740,14 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
   transition: opacity 0.4s ease;
 }
 
-.floating-actions {
-  position: fixed;
-  right: 96px;
-  top: 16px;
-  bottom: auto;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 12px;
-  z-index: 9999;
+.floating-actions { display: contents; }
+.floating-actions #themeToggle { position: fixed; right: 96px; bottom: 82px; z-index: 9999; }
+.floating-actions #toTop { position: fixed; right: 96px; bottom: 24px; z-index: 9999; }
+
+/* Wide screens have empty margins either side of the card: use the left one */
+@media (min-width: 1500px) {
+  .floating-actions #themeToggle { right: auto; left: 24px; top: 16px; bottom: auto; }
+  .floating-actions #toTop { right: auto; left: 24px; bottom: 24px; }
 }
 
 .floating-actions button {
@@ -988,7 +986,8 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
 @media (max-width: 767px) {
   body.home-body .site-container .page-title.sec-title { padding: 0 20px; }
   body.home-body .right-content .welcome h4 { font-size: 24px; }
-  .floating-actions { right: 14px; top: auto; bottom: 14px; }
+  .floating-actions #themeToggle { left: auto; right: 14px; top: auto; bottom: 72px; }
+  .floating-actions #toTop { left: auto; right: 14px; bottom: 14px; }
 }
 
 
