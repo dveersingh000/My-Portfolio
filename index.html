@@ -12,6 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
 <link href="css/modern.css" rel="stylesheet">
 
 
@@ -167,83 +168,93 @@
 
                                 <!--About Me-->
                                 <div class="about-me">
-                                    <div class="row clearfix">
-                                        <!--Skills-->
-                                        <div class="skills-column col-xl-5 col-lg-12 col-md-12">
-                                            <!-- <h4>Skills</h4> -->
-                                            <h4>Proficiency</h4>
-                                            <div class="skills">
 
-                                                <div class="skill-block">
-                                                    <div class="skill-block-inner">
-                                                        <div class="skill-title">Full Stack (React & Node.js)</div>
-                                                        <div class="bar">      <!--data percent will determine the length of the bar-->
-                                                            <div class="bar-inner count-bar" data-percent="85%">
-                                                                <div class="count-box"><span class="count-text" data-stop="85" data-speed="500">0</span>%</div>
-                                                            </div>
-                                                        </div>
+                                    <!--Proficiency-->
+                                    <div class="proficiency">
+                                        <h4>Proficiency</h4>
+                                        <div class="row clearfix">
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:85">
+                                                        <i class="devicon-react-original colored"></i>
                                                     </div>
+                                                    <div class="prof-title">Full Stack Developer</div>
+                                                    <div class="prof-sub">React &amp; Node.js</div>
+                                                    <div class="prof-bar"><span style="--w:85%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="85">0</span>%</div>
                                                 </div>
-
-                                                <div class="skill-block">
-                                                    <div class="skill-block-inner">
-                                                        <div class="skill-title">Cloud & DevOps</div>
-                                                        <div class="bar">  <!--data percent will determine the length of the bar-->
-                                                            <div class="bar-inner count-bar" data-percent="75%">
-                                                                <div class="count-box"><span class="count-text" data-stop="75" data-speed="500">0</span>%</div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:75">
+                                                        <i class="devicon-docker-plain colored"></i>
                                                     </div>
+                                                    <div class="prof-title">DevOps Engineer</div>
+                                                    <div class="prof-sub">AWS, Docker, Kubernetes, CI/CD</div>
+                                                    <div class="prof-bar"><span style="--w:75%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="75">0</span>%</div>
                                                 </div>
-
-                                                <div class="skill-block">
-                                                    <div class="skill-block-inner">
-                                                        <div class="skill-title">Frontend Development</div>
-                                                        <div class="bar">            <!--data percent will determine the length of the bar-->
-                                                            <div class="bar-inner count-bar" data-percent="76%">
-                                                                <div class="count-box"><span class="count-text" data-stop="76" data-speed="500">0</span>%</div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+                                            <div class="prof-card col-lg-4 col-md-4 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="prof-ring" style="--p:76">
+                                                        <i class="devicon-javascript-plain colored"></i>
                                                     </div>
+                                                    <div class="prof-title">Frontend Developer</div>
+                                                    <div class="prof-sub">React, JavaScript, Tailwind CSS</div>
+                                                    <div class="prof-bar"><span style="--w:76%"></span></div>
+                                                    <div class="prof-val"><span class="num" data-to="76">0</span>%</div>
                                                 </div>
-
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <!--Expertise-->
-                                        <div class="expertise-column col-xl-7 col-lg-12 col-md-12">
-                                            <!-- <h4>Expertise</h4> -->
-                                            <h4>Skills</h4>
-                                            <div class="expertise">
-                                                <!-- ➢ Programming Languages: Java(Proficient), Java EE ,C , C++, Python
-                                                ➢ Framework/Libraries/Tools: React.js , Node.js 
-                                                ➢ Databases: MySQL, Oracle
-                                                ➢ Version Control system: Git, github
-                                                ➢ Frontend: HTML5, CSS3, Bootstrap, JS ,JQuery -->
-                                                <div class="row clearfix">
-                                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                                        <ul>
-                                                            <li> React.js, Redux </li>
-                                                            <li> JavaScript (ES6+) </li>
-                                                            <li> Node.js, Express.js </li>
-                                                            <li> REST APIs, JWT </li>
-                                                            <li> MongoDB, PostgreSQL </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                                        <ul>
-                                                            <li> AWS, Terraform </li>
-                                                            <li> Docker, Kubernetes </li>
-                                                            <li> Jenkins, CI/CD </li>
-                                                            <li> Git & GitHub </li>
-                                                            <li> HTML5, CSS3, Material UI </li>
-                                                        </ul>
+                                    <!--Skills-->
+                                    <div class="tech-skills">
+                                        <h4>Skills</h4>
+                                        <div class="row clearfix">
+                                            <div class="tech-card col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-react-original colored"></i></span><h5>Frontend</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-react-original colored"></i>React.js</span>
+                                                        <span class="chip"><i class="devicon-redux-original colored"></i>Redux</span>
+                                                        <span class="chip"><i class="devicon-javascript-plain colored"></i>JavaScript ES6+</span>
+                                                        <span class="chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                                                        <span class="chip"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                                                        <span class="chip"><i class="devicon-materialui-plain colored"></i>Material UI</span>
+                                                        <span class="chip"><i class="devicon-tailwindcss-original colored"></i>Tailwind</span>
                                                     </div>
                                                 </div>
-
+                                            </div>
+                                            <div class="tech-card col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-nodejs-plain colored"></i></span><h5>Backend &amp; Data</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                                                        <span class="chip"><i class="devicon-express-original"></i>Express.js</span>
+                                                        <span class="chip"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                                                        <span class="chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                                                        <span class="chip"><i class="devicon-postman-plain colored"></i>REST APIs</span>
+                                                        <span class="chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tech-card col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                <div class="inner-box spot">
+                                                    <div class="tech-head"><span class="tech-ico"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span><h5>Cloud &amp; DevOps</h5></div>
+                                                    <div class="chips">
+                                                        <span class="chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
+                                                        <span class="chip"><i class="devicon-docker-plain colored"></i>Docker</span>
+                                                        <span class="chip"><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
+                                                        <span class="chip"><i class="devicon-terraform-plain colored"></i>Terraform</span>
+                                                        <span class="chip"><i class="devicon-jenkins-line colored"></i>Jenkins</span>
+                                                        <span class="chip"><i class="devicon-git-plain colored"></i>Git/GitHub</span>
+                                                        <span class="chip"><i class="devicon-linux-plain"></i>Linux</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
 
                                     <!--Features-->
@@ -287,8 +298,8 @@
                                             <div class="language-block col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
                                                     <div class="graph-outer">
-                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="75">
-                                                        <div class="inner-text count-box"><span class="count-text" data-stop="75" data-speed="500"></span>%</div>
+                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="85">
+                                                        <div class="inner-text count-box"><span class="count-text" data-stop="85" data-speed="500"></span>%</div>
                                                     </div>
                                                     <div class="text">English </div>
                                                     <!-- <div class="text">English <br>Experience</div> -->
@@ -298,8 +309,8 @@
                                             <div class="language-block col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
                                                     <div class="graph-outer">
-                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="90">
-                                                        <div class="inner-text count-box"><span class="count-text" data-stop="90" data-speed="500"></span>%</div>
+                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="100">
+                                                        <div class="inner-text count-box"><span class="count-text" data-stop="100" data-speed="500"></span>%</div>
                                                     </div>
                                                     <div class="text">Hindi </div>
                                                     <!-- <div class="text">French <br>Experience</div> -->
@@ -390,6 +401,39 @@
                                         <!--Block-->
                                         <div class="edu-block col-lg-12 col-md-12 col-sm-12">
                                             <div class="inner-box">
+                                                <div class="date"><span>Apr 2026  - Present </span></div>
+                                                <h5>Brighter Green Engineering</h5>
+
+                                                <div class="text"><span class="fa fa-map-marker-alt"></span>        <span>Bangalore, India</span></div>
+
+                                                <div class="text">Software Developer (Full Stack).</div>
+                                                <div class="text">• Develop full-stack functionality for a solar asset management and operations platform using React.js, Node.js, Express.js, REST APIs, and PostgreSQL.</div>
+<div class="text">• Contributed to consolidating Admin and Client portals into one codebase with shared React components, routing, and role-based permissions while preserving portal-specific workflows.</div>
+<div class="text">• Stabilised Client portal workflows by resolving access-control, filtering, search, export, routing, and data-loading issues.</div>
+<div class="text">• Developed and updated backend REST APIs, validations, permission checks, and error handling to support frontend features and resolve integration defects.</div>
+<div class="text">• Investigated defects across React components, application state, and backend services; performed functional and regression testing for release readiness.</div>
+
+                                            </div>
+                                        </div>
+                                        <!--Block-->
+                                        <div class="edu-block col-lg-12 col-md-12 col-sm-12">
+                                            <div class="inner-box">
+                                                <div class="date"><span>Jan 2024  - Feb 2026 </span></div>
+                                                <h5>Innovertiga Technology</h5>
+
+                                                <div class="text"><span class="fa fa-map-marker-alt"></span>        <span>Lucknow, India</span></div>
+
+                                                <div class="text">React.js Developer.</div>
+                                                <div class="text">• Developed and maintained responsive React.js applications, converting Figma designs into reusable components and consistent, modern user interfaces.</div>
+<div class="text">• Built modular component and state-management patterns to improve maintainability, reuse, and feature delivery across application screens.</div>
+<div class="text">• Integrated REST APIs and JWT authentication, managed asynchronous data flows, and implemented loading, error, and validation states.</div>
+<div class="text">• Worked with Node.js and MongoDB-backed services, Git/GitHub workflows, debugging, and cross-functional Agile delivery.</div>
+
+                                            </div>
+                                        </div>
+                                        <!--Block-->
+                                        <div class="edu-block col-lg-12 col-md-12 col-sm-12">
+                                            <div class="inner-box">
                                                 <div class="date"><span>Mar 2022  -  May 2023</span></div>
                                                 <a onMouseOver="this.style.color='#d64a04'"
                                                     onMouseOut="this.style.color='#fd7030'" href="https://www.techmahindra.com/"  target="_blank">
@@ -413,39 +457,6 @@
                                         <!--Block-->
                                         <div class="edu-block col-lg-12 col-md-12 col-sm-12">
                                             <div class="inner-box">
-                                                <div class="date"><span>Jan 2024  - Feb 2026 </span></div>
-                                                <h5>Innovertiga Technology</h5>
-
-                                                <div class="text"><span class="fa fa-map-marker-alt"></span>        <span>Lucknow, India</span></div>
-
-                                                <div class="text">React.js Developer.</div>
-                                                <div class="text">• Developed and maintained responsive React.js applications, converting Figma designs into reusable components and consistent, modern user interfaces.</div>
-<div class="text">• Built modular component and state-management patterns to improve maintainability, reuse, and feature delivery across application screens.</div>
-<div class="text">• Integrated REST APIs and JWT authentication, managed asynchronous data flows, and implemented loading, error, and validation states.</div>
-<div class="text">• Worked with Node.js and MongoDB-backed services, Git/GitHub workflows, debugging, and cross-functional Agile delivery.</div>
-
-                                            </div>
-                                        </div>
-                                        <!--Block-->
-                                        <div class="edu-block col-lg-12 col-md-12 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="date"><span>Apr 2026  - Present </span></div>
-                                                <h5>Brighter Green Engineering</h5>
-
-                                                <div class="text"><span class="fa fa-map-marker-alt"></span>        <span>Bangalore, India</span></div>
-
-                                                <div class="text">Software Developer (Full Stack).</div>
-                                                <div class="text">• Develop full-stack functionality for a solar asset management and operations platform using React.js, Node.js, Express.js, REST APIs, and PostgreSQL.</div>
-<div class="text">• Contributed to consolidating Admin and Client portals into one codebase with shared React components, routing, and role-based permissions while preserving portal-specific workflows.</div>
-<div class="text">• Stabilised Client portal workflows by resolving access-control, filtering, search, export, routing, and data-loading issues.</div>
-<div class="text">• Developed and updated backend REST APIs, validations, permission checks, and error handling to support frontend features and resolve integration defects.</div>
-<div class="text">• Investigated defects across React components, application state, and backend services; performed functional and regression testing for release readiness.</div>
-
-                                            </div>
-                                        </div>
-                                        <!--Block-->
-                                        <div class="edu-block col-lg-12 col-md-12 col-sm-12">
-                                            <div class="inner-box">
                                                 <h5>Cloud, DevOps &amp; DevSecOps Projects</h5>
                                                 <div class="text">• <b>AWS &amp; Infrastructure as Code</b> - Provisioned project environments using Terraform and AWS services including EC2, S3, IAM, VPC, and CloudWatch.</div>
 <div class="text">• <b>CI/CD &amp; DevSecOps</b> - Built Jenkins pipelines with Git/GitHub, automated testing, SonarQube quality gates, and Trivy vulnerability scanning.</div>
@@ -460,51 +471,6 @@
                                 </div>
 
 
-                                 <!--Expertise-->
-                                 <div class="expertise">
-                                    <div class="main-title">
-                                        <span class="icon"><img src="images/resource/icons/expertise-1.png" alt=""></span>
-                                        <span class="txt">Skills</span>
-                                    </div>
-                                    <div class="row clearfix">
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> React.js, Redux, Context API </li>
-                                                    <li> JavaScript (ES6+) </li>
-                                                    <li> HTML5, CSS3, Material UI </li>
-                                                    <li> React Testing Library </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> Node.js, Express.js </li>
-                                                    <li> REST APIs, JWT </li>
-                                                    <li> MongoDB, PostgreSQL </li>
-                                                    <li> Validation &amp; Error Handling </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!--Block-->
-                                        <div class="expertise-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <ul>
-                                                    <li> AWS: EC2, IAM, VPC, S3, EKS, CloudWatch </li>
-                                                    <li> Docker, Kubernetes, Terraform, Ansible </li>
-                                                    <li> Jenkins, Maven, Git/GitHub </li>
-                                                    <li> Linux, Shell Scripting </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
 
 
 
@@ -629,7 +595,7 @@
                                             <!--Portfolio block     RESUME PROJECTS     -->
                                             <div class="portfolio-block mix all websites col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
-                                                  <div class="image"><img width="246" height="196" src="images/resource/work-1.jpg" alt=""></div>
+                                                  <div class="image"><img width="246" height="196" src="images/resource/work-1.svg" alt=""></div>
                                                   <div class="hover-box">
                                                     <div class="hvr-upper clearfix">
                                                         <a href="https://work-lah-admin-panel.vercel.app" target="_blank" class="theme-btn view-btn"><span class="fa fa-link"></span></a>
@@ -643,7 +609,7 @@
 
                                             <div class="portfolio-block mix all websites col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
-                                                  <div class="image"><img width="246" height="196" src="images/resource/work-2.jpg" alt=""></div>
+                                                  <div class="image"><img width="246" height="196" src="images/resource/work-2.svg" alt=""></div>
                                                   <div class="hover-box">
                                                     <div class="hvr-upper clearfix">
                                                         <a href="https://github.com/dveersingh000?tab=repositories" target="_blank" class="theme-btn view-btn"><span class="fa fa-link"></span></a>
@@ -657,7 +623,7 @@
 
                                             <div class="portfolio-block mix all softwares col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
-                                                  <div class="image"><img width="246" height="196" src="images/resource/work-3.jpg" alt=""></div>
+                                                  <div class="image"><img width="246" height="196" src="images/resource/work-3.svg" alt=""></div>
                                                   <div class="hover-box">
                                                     <div class="hvr-upper clearfix">
                                                         <a href="https://github.com/dveersingh000?tab=repositories" target="_blank" class="theme-btn view-btn"><span class="fa fa-link"></span></a>
@@ -671,7 +637,7 @@
 
                                             <div class="portfolio-block mix all softwares col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                                 <div class="inner-box">
-                                                  <div class="image"><img width="246" height="196" src="images/resource/work-4.jpg" alt=""></div>
+                                                  <div class="image"><img width="246" height="196" src="images/resource/work-4.svg" alt=""></div>
                                                   <div class="hover-box">
                                                     <div class="hvr-upper clearfix">
                                                         <a href="#work-section" class="theme-btn view-btn"><span class="fa fa-link"></span></a>
@@ -972,7 +938,6 @@
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up"></span></div>
 
 
 
