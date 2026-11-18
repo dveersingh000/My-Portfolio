@@ -742,10 +742,12 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
 
 .floating-actions {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
+  right: 96px;
+  top: 16px;
+  bottom: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  align-items: center;
   gap: 12px;
   z-index: 9999;
 }
@@ -798,7 +800,7 @@ body.home-body .mode-switch .switcher { opacity: 0.9; }
 .floating-actions #themeToggle:focus-visible { width: 140px; justify-content: flex-start; }
 .floating-actions #themeToggle:hover .tl,
 .floating-actions #themeToggle:focus-visible .tl { max-width: 100px; opacity: 1; padding-right: 14px; }
-.floating-actions { align-items: flex-end; gap: 16px; }
+.floating-actions { align-items: center; gap: 12px; }
 .scroll-to-top { display: none !important; }
 
 /* Skills cards moved into the home section */
@@ -986,7 +988,7 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
 @media (max-width: 767px) {
   body.home-body .site-container .page-title.sec-title { padding: 0 20px; }
   body.home-body .right-content .welcome h4 { font-size: 24px; }
-  .floating-actions { right: 14px; bottom: 14px; }
+  .floating-actions { right: 14px; top: auto; bottom: 14px; }
 }
 
 
