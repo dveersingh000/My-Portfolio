@@ -20,7 +20,84 @@
   document.addEventListener("DOMContentLoaded", function () {
     var body = document.body;
 
-    /* Never let slow assets keep the preloader up */
+    /* Featured cards: data-featured in the HTML is the public setting.
+       Open the page with ?edit to show star toggles (saved in this browser only). */
+    var editMode = /[?&]edit(=|&|$)/.test(location.search);
+    var featuredStore = {};
+    if (/[?&]edit=reset/.test(location.search)) {
+      try { localStorage.removeItem("featuredOverrides"); } catch (e) {}
+    }
+    if (editMode) {
+      try { featuredStore = JSON.parse(localStorage.getItem("featuredOverrides") || "{}"); } catch (e) {}
+    }
+
+    function refreshFeaturedStat() {
+      var n = document.querySelector('.stat-card[data-stat="featured"] .num');
+      if (!n) return;
+      var count = document.querySelectorAll(".portfolio-block[data-featured]").length;
+      n.setAttribute("data-to", count);
+      n.textContent = count;
+    }
+
+    function cardKey(card, kind) {
+      var h = card.querySelector("h5, h4, h3, .title, .text");
+      return kind + ":" + (h ? h.textContent.trim().replace(/\s+/g, " ").slice(0, 80) : "");
+    }
+
+    function sortFeatured(cards, rebuild) {
+      if (!cards.length) return;
+      var parent = cards[0].parentNode;
+      var $ = window.jQuery;
+      var mix = rebuild && $ && $(parent).hasClass("filter-list") && $.fn.mixItUp;
+      var filter = "all";
+      if (mix) {
+        var active = document.querySelector("li.filter.active");
+        if (active) filter = active.getAttribute("data-filter") || "all";
+        $(parent).mixItUp("destroy");
+      }
+      cards.slice().sort(function (a, b) {
+        var fa = a.hasAttribute("data-featured") ? 0 : 1, fb = b.hasAttribute("data-featured") ? 0 : 1;
+        return fa - fb || a._order - b._order;
+      }).forEach(function (c) { parent.appendChild(c); });
+      if (mix) $(parent).mixItUp({ load: { filter: filter === "all" ? "all" : filter } });
+    }
+
+    if (editMode) body.classList.add("fav-edit");
+
+    function setupFeatured(selector, kind) {
+      var cards = Array.prototype.slice.call(document.querySelectorAll(selector));
+      cards.forEach(function (card, i) {
+        card._order = i;
+        var key = cardKey(card, kind);
+        if (key in featuredStore) {
+          if (featuredStore[key]) card.setAttribute("data-featured", "");
+          else card.removeAttribute("data-featured");
+        }
+        card.classList.add("has-fav");
+        var box = card.querySelector(".inner-box");
+        if (!editMode || !box) return;
+        var btn = el("button", "fav-star", "&#9733;");
+        btn.type = "button";
+        btn.title = "Feature / unfeature (shown first)";
+        btn.setAttribute("aria-label", "Toggle featured");
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var on = !card.hasAttribute("data-featured");
+          if (on) card.setAttribute("data-featured", ""); else card.removeAttribute("data-featured");
+          featuredStore[key] = on;
+          try { localStorage.setItem("featuredOverrides", JSON.stringify(featuredStore)); } catch (err) {}
+          sortFeatured(cards, true);
+          refreshFeaturedStat();
+        });
+        box.appendChild(btn);
+      });
+      sortFeatured(cards, true);
+    }
+    setupFeatured(".portfolio-block", "project");
+    setupFeatured(".award-block", "cert");
+
+
     var pre = document.querySelector(".preloader");
     if (pre) {
       setTimeout(function () {
@@ -136,10 +213,32 @@
         })();
       }
 
-      var stats = [[4, "+", "Years experience"], [3, "", "Companies"], [4, "", "Featured projects"], [2, "", "Certifications"]];
+      var expBlocks = Array.prototype.filter.call(document.querySelectorAll(".experience .edu-block"), function (b) {
+        return b.querySelector(".date");
+      });
+      var years = 0;
+      var startDates = expBlocks.map(function (b) {
+        var m = b.querySelector(".date").textContent.trim().match(/^([A-Za-z]{3})[a-z]*\s+(\d{4})/);
+        return m ? new Date(m[1] + " 1, " + m[2]) : null;
+      }).filter(Boolean);
+      if (startDates.length) {
+        var earliest = Math.min.apply(null, startDates);
+        years = Math.floor((Date.now() - earliest) / (365.25 * 24 * 3600 * 1000));
+      }
+      var certCount = 0;
+      document.querySelectorAll(".award-block .inner-box").forEach(function (b) {
+        certCount += +b.getAttribute("data-certs") || 1;
+      });
+      var stats = [
+        [years, "+", "Years experience"],
+        [new Set(expBlocks.map(function (b) { return (b.querySelector("h5") || {}).textContent; })).size, "", "Companies"],
+        [document.querySelectorAll(".portfolio-block[data-featured]").length, "", "Featured projects"],
+        [certCount, "", "Certifications"]
+      ];
       var row = el("div", "stats-row");
       stats.forEach(function (s) {
         var card = el("div", "stat-card");
+        if (s[2] === "Featured projects") card.setAttribute("data-stat", "featured");
         card.innerHTML = '<div class="num" data-to="' + s[0] + '" data-suffix="' + s[1] + '">0' + s[1] + '</div><div class="lbl">' + s[2] + "</div>";
         row.appendChild(card);
       });
