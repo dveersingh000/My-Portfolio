@@ -1173,6 +1173,6 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 
 .awards .row.cert-collapsed .award-block:nth-child(n+5) { display: none; }
 .cert-toggle-wrap { text-align: center; margin-top: 18px; }
-.cert-toggle { background: transparent; border: 2px solid var(--accent-2); color: var(--accent-2); border-radius: 30px; padding: 10px 26px; font-weight: 600; cursor: pointer; transition: all .25s; }
-.cert-toggle:hover, .cert-toggle:focus { background: var(--accent-2); color: #fff; outline: none; }
+.cert-toggle { background: transparent; border: 2px solid var(--accent); color: var(--accent); border-radius: 30px; padding: 10px 26px; font-weight: 600; cursor: pointer; transition: all .25s; }
+.cert-toggle:hover, .cert-toggle:focus { background: var(--accent); border-color: var(--accent); color: #fff; outline: none; }
 .cert-toggle .fa { margin-right: 8px; }
