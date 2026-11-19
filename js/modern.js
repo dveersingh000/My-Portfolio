@@ -97,6 +97,33 @@
     setupFeatured(".portfolio-block", "project");
     setupFeatured(".award-block", "cert");
 
+    (function setupCertToggle() {
+      var blocks = Array.prototype.slice.call(document.querySelectorAll(".awards .award-block"));
+      var LIMIT = 4;
+      row0 = null;
+      if (blocks.length <= LIMIT) return;
+      var row = blocks[0].parentNode;
+      var btn = el("button", "cert-toggle", "");
+      btn.type = "button";
+      var expanded = false;
+      function render() {
+        row.classList.toggle("cert-collapsed", !expanded);
+        btn.setAttribute("aria-expanded", expanded);
+        btn.innerHTML = expanded
+          ? '<span class="fa fa-chevron-up"></span> Collapse'
+          : '<span class="fa fa-chevron-down"></span> Show all ' + blocks.length + ' certifications';
+      }
+      btn.addEventListener("click", function () {
+        expanded = !expanded;
+        render();
+        if (!expanded) row.parentNode.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      var wrap = el("div", "cert-toggle-wrap", "");
+      wrap.appendChild(btn);
+      row.parentNode.insertBefore(wrap, row.nextSibling);
+      render();
+    })();
+
 
     var pre = document.querySelector(".preloader");
     if (pre) {
