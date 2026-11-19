@@ -459,6 +459,33 @@
       });
     });
 
-    /* Project cards use a CSS-only lift on hover; a JS tilt made hover and clicks flaky */
+  });
+
+  /* Sidebar: typing role rotator + scroll progress */
+  document.addEventListener("DOMContentLoaded", function () {
+    var rot = document.querySelector(".role-rot");
+    if (rot && !reduceMotion) {
+      var roles = rot.getAttribute("data-roles").split("|"), ri = 0, ci = roles[0].length, del = true;
+      (function tick() {
+        var w = roles[ri], delay = del ? 45 : 85;
+        ci += del ? -1 : 1;
+        rot.textContent = w.slice(0, ci);
+        if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; delay = 350; }
+        else if (!del && ci === roles[ri].length) { del = true; delay = 1800; }
+        setTimeout(tick, delay);
+      })();
+    }
+    var pct = document.querySelector(".side-pct"), bar = document.querySelector(".side-progress .bar i");
+    if (pct && bar) {
+      var upd = function () {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        var p = h > 0 ? Math.min(100, Math.max(0, Math.round(window.scrollY / h * 100))) : 0;
+        pct.textContent = p + "%";
+        bar.style.width = p + "%";
+      };
+      window.addEventListener("scroll", upd, { passive: true });
+      window.addEventListener("resize", upd);
+      upd();
+    }
   });
 })();
