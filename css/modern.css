@@ -1176,3 +1176,12 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 .cert-toggle { background: transparent; border: 2px solid var(--accent); color: var(--accent); border-radius: 30px; padding: 10px 26px; font-weight: 600; cursor: pointer; transition: all .25s; }
 .cert-toggle:hover, .cert-toggle:focus { background: var(--accent); border-color: var(--accent); color: #fff; outline: none; }
 .cert-toggle .fa { margin-right: 8px; }
+
+.collapsible-title { cursor: pointer; position: relative; user-select: none; }
+.collapsible-title .collapse-caret { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-left: 14px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); font-size: 12px; vertical-align: middle; transition: transform .3s, background .25s, color .25s; }
+.collapsible-title:hover .collapse-caret, .collapsible-title:focus .collapse-caret { background: var(--accent); color: #fff; }
+.collapsible-title:focus { outline: none; }
+.sec-collapsed > .collapsible-title .collapse-caret { transform: rotate(-90deg); }
+.sec-collapsible.sec-collapsed > *:not(.main-title) { display: none !important; }
+.sec-collapsible-page.sec-collapsed > *:not(.page-title) { display: none !important; }
+.collapsible-title .collapse-caret .fa { margin: 0; }

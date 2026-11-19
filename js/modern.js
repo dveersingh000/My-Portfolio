@@ -123,6 +123,25 @@
       render();
     })();
 
+    document.querySelectorAll(".main-title, .page-title.sec-title").forEach(function (title) {
+      var section = title.parentNode;
+      var isPage = title.classList.contains("page-title");
+      section.classList.add(isPage ? "sec-collapsible-page" : "sec-collapsible");
+      title.classList.add("collapsible-title");
+      title.setAttribute("role", "button");
+      title.setAttribute("tabindex", "0");
+      title.setAttribute("aria-expanded", "true");
+      title.appendChild(el("span", "collapse-caret", '<span class="fa fa-chevron-down"></span>'));
+      function toggle() {
+        var collapsed = section.classList.toggle("sec-collapsed");
+        title.setAttribute("aria-expanded", !collapsed);
+      }
+      title.addEventListener("click", toggle);
+      title.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+    });
+
 
     var pre = document.querySelector(".preloader");
     if (pre) {
