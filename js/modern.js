@@ -100,7 +100,6 @@
     (function setupCertToggle() {
       var blocks = Array.prototype.slice.call(document.querySelectorAll(".awards .award-block"));
       var LIMIT = 4;
-      row0 = null;
       if (blocks.length <= LIMIT) return;
       var row = blocks[0].parentNode;
       var btn = el("button", "cert-toggle", "");
