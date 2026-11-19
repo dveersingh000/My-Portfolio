@@ -1198,3 +1198,10 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 .sec-collapsible-sub > h4.collapsible-title { display: flex; align-items: center; justify-content: space-between; padding-right: 0; }
 .sec-collapsible-sub > h4.collapsible-title .collapse-caret { position: static; margin: 0; flex: none; }
 .sec-collapsible-sub.sec-collapsed > *:not(h4) { display: none !important; }
+
+/* Hover feedback and consistent text for all collapsible titles */
+.collapsible-title, .collapsible-title .txt, .collapsible-title span { transition: color .25s; }
+.collapsible-title:hover, .collapsible-title:hover .txt, .collapsible-title:focus .txt { color: var(--accent); }
+.page-title.collapsible-title:hover h1 span { filter: brightness(1.15); }
+.sec-collapsible-sub > h4.collapsible-title { text-transform: uppercase; letter-spacing: .5px; }
+.collapsible-title:hover .collapse-caret { background: var(--accent); color: #fff; }
