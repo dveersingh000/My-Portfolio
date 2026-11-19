@@ -1046,8 +1046,8 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
   .floating-actions #toTop { left: auto; right: 14px; bottom: 14px; }
 }
 
-/* Not enough left gutter for the buttons: dock them at the bottom right instead */
-@media (max-width: 1439px) {
+/* Dock the floating buttons at the bottom right at every width */
+@media (min-width: 0px) {
   .floating-actions #themeToggle { left: auto; right: 16px; top: auto; bottom: 76px; flex-direction: row-reverse; }
   .floating-actions #toTop { left: auto; right: 16px; bottom: 16px; }
   .floating-actions #themeToggle:hover,
@@ -1469,4 +1469,12 @@ body.home-body .left-bar .left-upper .info .designation { min-height: 20px; whit
   body.home-body.grey-left-bar .main-nav .navigation li.stories a::before { top: 9px; }
   body.home-body.grey-left-bar .main-nav .navigation li:hover > a::after,
   body.home-body.grey-left-bar .main-nav .navigation li.current > a::after { line-height: 26px; }
+}
+
+/* Keep the weekend switch on the right edge (vertical) instead of floating above the page on narrower desktops */
+@media (min-width: 992px) and (max-width: 1299px) {
+  .mode-switch {
+    position: fixed; top: 0; left: -46px; padding: 0 200px 0 0;
+    -ms-transform: rotate(-90deg) scale(.8); transform: rotate(-90deg) scale(.8);
+  }
 }
