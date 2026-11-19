@@ -1033,6 +1033,16 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
   .floating-actions #toTop { left: auto; right: 14px; bottom: 14px; }
 }
 
+/* Not enough left gutter for the buttons: dock them at the bottom right instead */
+@media (max-width: 1439px) {
+  .floating-actions #themeToggle { left: auto; right: 16px; top: auto; bottom: 76px; flex-direction: row-reverse; }
+  .floating-actions #toTop { left: auto; right: 16px; bottom: 16px; }
+  .floating-actions #themeToggle:hover,
+  .floating-actions #themeToggle:focus-visible { justify-content: flex-end; }
+  .floating-actions #themeToggle:hover .tl,
+  .floating-actions #themeToggle:focus-visible .tl { padding-right: 0; padding-left: 14px; }
+}
+
 
 /* ---------- Round 3: spacing, proficiency + tech cards ---------- */
 body.home-body .resume-content { padding: 0 50px 10px; }
