@@ -1193,3 +1193,8 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 .page-title.collapsible-title .collapse-caret { top: 0; margin-top: 0; }
 .sec-collapsed > .collapsible-title .collapse-caret { transform: rotate(-90deg); }
 .page-title.collapsible-title .collapse-caret { right: 20px; top: 2px; }
+
+.sec-collapsible-sub { position: relative; }
+.sec-collapsible-sub > h4.collapsible-title { display: flex; align-items: center; justify-content: space-between; padding-right: 0; }
+.sec-collapsible-sub > h4.collapsible-title .collapse-caret { position: static; margin: 0; flex: none; }
+.sec-collapsible-sub.sec-collapsed > *:not(h4) { display: none !important; }

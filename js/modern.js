@@ -123,10 +123,11 @@
       render();
     })();
 
-    document.querySelectorAll(".main-title, .page-title.sec-title").forEach(function (title) {
+    document.querySelectorAll(".main-title, .page-title.sec-title, .proficiency > h4, .tech-skills > h4, .languages > h4").forEach(function (title) {
       var section = title.parentNode;
       var isPage = title.classList.contains("page-title");
-      section.classList.add(isPage ? "sec-collapsible-page" : "sec-collapsible");
+      var isSub = title.tagName === "H4";
+      section.classList.add(isPage ? "sec-collapsible-page" : isSub ? "sec-collapsible-sub" : "sec-collapsible");
       title.classList.add("collapsible-title");
       title.setAttribute("role", "button");
       title.setAttribute("tabindex", "0");
