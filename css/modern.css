@@ -1428,3 +1428,5 @@ body.home-body .left-bar .left-upper .info .designation { min-height: 20px; whit
 @media (max-height: 900px) { .side-progress { display: none; } }
 @media (max-height: 800px) { .side-chips { display: none; } }
 @media (max-height: 800px) { .side-social { display: none; } }
+@media (max-height: 800px) { .side-social { display: flex; } .side-cta { display: none; } }
+@media (max-width: 1199px) { .side-social { display: flex; } }
