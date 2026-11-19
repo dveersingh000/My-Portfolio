@@ -1132,3 +1132,81 @@ body.home-body .prof-card .inner-box:hover, body.home-body .tech-card .inner-box
   body.home-body .resume-content .page-title.sec-title { margin-left: -20px; margin-right: -20px; }
   body.home-body .about-me { padding: 10px 20px 0; }
 }
+
+/* Featured cards: badge + owner star toggle, kept inside the card */
+body.home-body .has-fav > .inner-box { position: relative; }
+body.home-body [data-featured] > .inner-box {
+  border-color: rgba(253, 112, 48, .55);
+  box-shadow: 0 0 0 1px rgba(253, 112, 48, .25), 0 18px 40px -24px var(--accent);
+}
+body.home-body [data-featured] > .inner-box::after {
+  content: "\2605  Featured";
+  position: absolute !important; top: 12px; right: 12px; z-index: 7;
+  padding: 4px 11px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; letter-spacing: .05em; line-height: 1.3; text-transform: uppercase;
+  color: #1b1208; background: linear-gradient(135deg, #ffd08a, #fd7030);
+  box-shadow: 0 6px 16px -6px rgba(253, 112, 48, .8);
+  pointer-events: none;
+}
+body.fav-edit [data-featured] > .inner-box::after { display: none; }
+
+body.home-body .fav-star {
+  position: absolute !important; top: 10px; right: 10px; z-index: 8;
+  width: 36px; height: 36px; padding: 0; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(15, 15, 25, .6);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, .75); font-size: 18px; line-height: 1; cursor: pointer;
+  transition: transform .25s cubic-bezier(.2, .8, .2, 1), background .25s, color .25s, box-shadow .25s;
+}
+body.home-body .fav-star:hover { transform: scale(1.15) rotate(12deg); color: #ffd08a; }
+body.home-body [data-featured] .fav-star {
+  color: #1b1208; border-color: transparent;
+  background: linear-gradient(135deg, #ffd08a, #fd7030);
+  box-shadow: 0 0 0 4px rgba(253, 112, 48, .25), 0 8px 18px -6px rgba(253, 112, 48, .9);
+}
+
+/* Project cards: hover actions sit top-right, so keep the featured UI top-left */
+body.home-body .portfolio-block .fav-star { right: auto; left: 12px; top: 12px; }
+body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto; left: 12px; top: 12px; }
+
+.awards .row.cert-collapsed .award-block:nth-child(n+5) { display: none; }
+.cert-toggle-wrap { text-align: center; margin-top: 18px; }
+.cert-toggle { background: transparent; border: 2px solid var(--accent); color: var(--accent); border-radius: 30px; padding: 10px 26px; font-weight: 600; cursor: pointer; transition: all .25s; }
+.cert-toggle:hover, .cert-toggle:focus { background: var(--accent); border-color: var(--accent); color: #fff; outline: none; }
+.cert-toggle .fa { margin-right: 8px; }
+
+.collapsible-title { cursor: pointer; position: relative; user-select: none; }
+.collapsible-title .collapse-caret { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-left: 14px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); font-size: 12px; vertical-align: middle; transition: transform .3s, background .25s, color .25s; }
+.collapsible-title:hover .collapse-caret, .collapsible-title:focus .collapse-caret { background: var(--accent); color: #fff; }
+.collapsible-title:focus { outline: none; }
+.sec-collapsed > .collapsible-title .collapse-caret { transform: rotate(-90deg); }
+.sec-collapsible.sec-collapsed > *:not(.main-title) { display: none !important; }
+.sec-collapsible-page.sec-collapsed > *:not(.page-title) { display: none !important; }
+.collapsible-title .collapse-caret .fa { margin: 0; }
+
+/* Consistent right-aligned section toggles */
+.sec-collapsible, .sec-collapsible-page { position: relative; }
+.collapsible-title { position: relative; padding-right: 56px; }
+.collapsible-title .collapse-caret { position: absolute; right: 0; top: 50%; margin: -17px 0 0 0; width: 34px; height: 34px; box-sizing: border-box; background: rgba(255,255,255,.04); }
+.page-title.collapsible-title .collapse-caret { top: 0; margin-top: 0; }
+.sec-collapsed > .collapsible-title .collapse-caret { transform: rotate(-90deg); }
+.page-title.collapsible-title .collapse-caret { right: 20px; top: 2px; }
+
+.sec-collapsible-sub { position: relative; }
+.sec-collapsible-sub > h4.collapsible-title { display: flex; align-items: center; justify-content: space-between; padding-right: 0; }
+.sec-collapsible-sub > h4.collapsible-title .collapse-caret { position: static; margin: 0; flex: none; }
+.sec-collapsible-sub.sec-collapsed > *:not(h4) { display: none !important; }
+
+/* Hover feedback and consistent text for all collapsible titles */
+.collapsible-title, .collapsible-title .txt, .collapsible-title span { transition: color .25s; }
+.collapsible-title:hover, .collapsible-title:hover .txt, .collapsible-title:focus .txt { color: var(--accent); }
+.page-title.collapsible-title:hover h1 span { filter: brightness(1.15); }
+.sec-collapsible-sub > h4.collapsible-title { text-transform: uppercase; letter-spacing: .5px; }
+.collapsible-title:hover .collapse-caret { background: var(--accent); color: #fff; }
+
+/* Sub-title underline grows on hover, like the page titles */
+body.home-body .sec-collapsible-sub > h4.collapsible-title::after { transition: width .5s ease; }
+body.home-body .sec-collapsible-sub > h4.collapsible-title:hover::after { width: 72px; }
+body.home-body .resume-content .collapsible-title:hover .icon { background: var(--grad); }
