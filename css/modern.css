@@ -1285,3 +1285,80 @@ body.home-body .resume-content .collapsible-title:hover .icon { background: var(
 @media (prefers-reduced-motion: reduce) {
   .see-magic::before, .see-magic .magic-spark, .cine-rec i { animation: none; }
 }
+
+/* ---------- Interests: animated cards ---------- */
+body.home-body .resume-content .interests .row { margin: 0 -14px; }
+body.home-body .resume-content .interest-block { padding: 14px; }
+body.home-body .resume-content .interest-block .int-card {
+  position: relative; overflow: hidden; padding: 34px 20px 28px; text-align: center;
+  isolation: isolate;
+}
+.int-card::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .5s;
+  background: radial-gradient(circle at 50% 30%, rgba(253,112,48,.28), transparent 65%);
+}
+.int-card::after {
+  content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.14), transparent);
+  transform: skewX(-18deg); transition: left .9s;
+}
+.int-card:hover::before { opacity: 1; }
+.int-card:hover::after { left: 130%; }
+body.home-body .resume-content .interest-block .int-card:hover {
+  transform: translateY(-10px); box-shadow: 0 26px 44px -24px var(--accent), 0 0 0 1px rgba(253,112,48,.45);
+}
+.int-icon {
+  position: relative; width: 86px; height: 86px; margin: 0 auto 18px; border-radius: 50%;
+  color: var(--accent); border: 2px solid var(--accent); display: grid; place-items: center;
+  transition: background .4s, color .4s, box-shadow .4s;
+}
+.int-icon::before {
+  content: ""; position: absolute; inset: -9px; border-radius: 50%;
+  border: 1px dashed rgba(253,112,48,.45); animation: intSpin 14s linear infinite;
+}
+.int-icon svg { width: 62px; height: 62px; overflow: visible; }
+.int-card:hover .int-icon { background: var(--accent); color: #fff; box-shadow: 0 0 28px rgba(253,112,48,.55); }
+@keyframes intSpin { to { transform: rotate(360deg); } }
+
+/* Badminton: racket swing + shuttle rally */
+.int-badminton .racket { transform-origin: 56px 70px; animation: racketSwing 2.4s ease-in-out infinite; }
+.int-badminton .shuttle { animation: shuttleRally 2.4s linear infinite; }
+.int-badminton:hover .racket, .int-badminton:hover .shuttle { animation-duration: 1.2s; }
+@keyframes racketSwing { 0%,70%,100% { transform: rotate(8deg); } 80% { transform: rotate(-26deg); } 90% { transform: rotate(4deg); } }
+@keyframes shuttleRally {
+  0% { transform: translate(76px,30px) rotate(-120deg); }
+  25% { transform: translate(52px,8px) rotate(-150deg); }
+  50% { transform: translate(24px,26px) rotate(-60deg); }
+  70% { transform: translate(34px,36px) rotate(-40deg); }
+  85% { transform: translate(60px,12px) rotate(-130deg); }
+  100% { transform: translate(76px,30px) rotate(-120deg); }
+}
+
+/* AI: blinking eyes, pulsing antenna, twinkling sparks */
+.int-ai .eye { transform-box: fill-box; transform-origin: center; animation: aiBlink 3.6s infinite; }
+.int-ai .ant { animation: aiPulse 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.int-ai .spark { transform-box: fill-box; transform-origin: center; animation: aiTwinkle 2s ease-in-out infinite; }
+.int-ai .s2 { animation-delay: 1s; }
+.int-ai:hover .eye { animation: aiScan 1s ease-in-out infinite; }
+@keyframes aiBlink { 0%,92%,100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+@keyframes aiScan { 0%,100% { transform: translateX(-3px); } 50% { transform: translateX(3px); } }
+@keyframes aiPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.8); opacity: .4; } }
+@keyframes aiTwinkle { 0%,100% { transform: scale(.3) rotate(0); opacity: .2; } 50% { transform: scale(1.2) rotate(90deg); opacity: 1; } }
+
+/* Gaming: button presses, rumble, floating pixels */
+.int-gaming .pad { transform-box: fill-box; transform-origin: center; animation: padBob 3s ease-in-out infinite; }
+.int-gaming .btn { transform-box: fill-box; transform-origin: center; animation: btnPress 1.6s infinite; }
+.int-gaming .b2 { animation-delay: .4s; } .int-gaming .b3 { animation-delay: .8s; } .int-gaming .b4 { animation-delay: 1.2s; }
+.int-gaming .dpad { animation: dpadNudge 1.6s infinite; }
+.int-gaming .px { opacity: 0; animation: pxFloat 2.4s ease-out infinite; }
+.int-gaming .p2 { animation-delay: .8s; } .int-gaming .p3 { animation-delay: 1.6s; }
+.int-gaming:hover .pad { animation: padRumble .18s linear infinite; }
+@keyframes padBob { 0%,100% { transform: translateY(2px) rotate(-3deg); } 50% { transform: translateY(-2px) rotate(3deg); } }
+@keyframes btnPress { 0%,60%,100% { transform: scale(1); opacity: 1; } 20% { transform: scale(.45); opacity: .5; } }
+@keyframes dpadNudge { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-1.5px,0); } 75% { transform: translate(1.5px,0); } }
+@keyframes pxFloat { 0% { transform: translateY(14px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-8px) rotate(90deg); opacity: 0; } }
+@keyframes padRumble { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-1.5px,1px); } 75% { transform: translate(1.5px,-1px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .int-icon::before, .int-icon svg * { animation: none !important; }
+}
