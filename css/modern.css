@@ -1185,3 +1185,11 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 .sec-collapsible.sec-collapsed > *:not(.main-title) { display: none !important; }
 .sec-collapsible-page.sec-collapsed > *:not(.page-title) { display: none !important; }
 .collapsible-title .collapse-caret .fa { margin: 0; }
+
+/* Consistent right-aligned section toggles */
+.sec-collapsible, .sec-collapsible-page { position: relative; }
+.collapsible-title { position: relative; padding-right: 56px; }
+.collapsible-title .collapse-caret { position: absolute; right: 0; top: 50%; margin: -17px 0 0 0; width: 34px; height: 34px; box-sizing: border-box; background: rgba(255,255,255,.04); }
+.page-title.collapsible-title .collapse-caret { top: 0; margin-top: 0; }
+.sec-collapsed > .collapsible-title .collapse-caret { transform: rotate(-90deg); }
+.page-title.collapsible-title .collapse-caret { right: 20px; top: 2px; }
