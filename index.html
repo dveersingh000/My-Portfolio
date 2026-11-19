@@ -24,13 +24,7 @@
 
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('service_npu4ir8');
-        })();
-    </script>
+
  
 
 
@@ -855,7 +849,7 @@
                                         <div class="info-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                             <div class="inner-box">
                                                 <div class="icon"><span class="fa fa-map-marker-alt"></span></div>
-                                                <div class="text"><a href="https://goo.gl/maps/Tqr5ccJheGa3D2Bp9">Bangalore , India </a></div>
+                                                <div class="text"><a href="https://www.google.com/maps/search/?api=1&query=Bangalore%2C%20India" target="_blank" rel="noopener">Bangalore, India</a></div>
                                             </div>
                                         </div>
 
@@ -923,42 +917,61 @@
 
 
 <script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+        var btn = form.querySelector('button[type="submit"]');
+        var label = btn.querySelector('span');
+        var status = document.createElement('p');
+        status.className = 'form-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        btn.closest('.form-group').appendChild(status);
+
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
+            var original = label.textContent;
+            btn.disabled = true;
+            label.textContent = 'Sending...';
+            status.className = 'form-status';
+            status.textContent = '';
 
-         var visitormail=   document.getElementById('email').value;
-         var msg=   document.getElementById('message').value;
-         var username=   document.getElementById('Uname').value;
-            // document.getElementById('email')
-
-
-
-            // generate a five digit number for the contact_number variable
-            // this.contact_number.value = Math.random() * 100000 | 0;
-            // these IDs from the previous steps
-           emailjs.send("service_npu4ir8","__ejs-test-mail-service__",{
-                to_name: "dveersingh000@gmail.com",
-                from_name: visitormail ,
-                message: msg,
-                name:username,
-                reply_to: visitormail,
-            }).then(function(response) {
-                console.log('Email sent!', response);
-                // Optionally clear the form fields after successful submission
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-                document.getElementById('Uname').value = '';
-            }, function(error) {
-                console.error('Error sending email:', error);
+            var ctrl = new AbortController();
+            var timer = setTimeout(function () { ctrl.abort(); }, 15000);
+            fetch('https://formsubmit.co/ajax/dveersingh000@gmail.com', {
+                method: 'POST',
+                signal: ctrl.signal,
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    name: document.getElementById('Uname').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value,
+                    _subject: 'Portfolio message from ' + document.getElementById('Uname').value,
+                    _replyto: document.getElementById('email').value,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            }).then(function (res) {
+                return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+            }).then(function (r) {
+                if (!r.ok || String(r.data.success) === 'false') throw new Error(r.data.message || 'Request failed');
+                form.reset();
+                status.textContent = 'Thanks! Your message was sent.';
+                status.className = 'form-status ok';
+            }).catch(function (err) {
+                var m = String(err && err.message || '');
+                status.textContent = /activat/i.test(m)
+                    ? 'Mail service is awaiting one-time activation. Please email dveersingh000@gmail.com directly for now.'
+                    : 'Could not send. Please email dveersingh000@gmail.com directly.';
+                status.className = 'form-status err';
+            }).then(function () {
+                clearTimeout(timer);
+                btn.disabled = false;
+                label.textContent = original;
+            });
         });
-    }
+    });
 </script>
-
-
-
-
-
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

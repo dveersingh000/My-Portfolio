@@ -20,6 +20,16 @@
   document.addEventListener("DOMContentLoaded", function () {
     var body = document.body;
 
+    /* Never let slow assets keep the preloader up */
+    var pre = document.querySelector(".preloader");
+    if (pre) {
+      setTimeout(function () {
+        pre.style.transition = "opacity .4s";
+        pre.style.opacity = "0";
+        setTimeout(function () { pre.style.display = "none"; }, 450);
+      }, 1200);
+    }
+
     /* Feature cards open the Work section with the matching filter */
     document.querySelectorAll("[data-work-filter]").forEach(function (link) {
       link.addEventListener("click", function (e) {

@@ -713,6 +713,19 @@ body.home-body .contact-content .info-block .icon {
   color: #fff;
 }
 
+body.home-body .contact-content .info-box .info-block .inner-box { position: relative; cursor: pointer; }
+body.home-body .contact-content .info-block .text { position: static; }
+body.home-body .contact-content .info-block .text a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+}
+.form-status { margin: 10px 0 0; font-size: 14px; min-height: 20px; }
+.form-status.ok { color: #22c55e; }
+.form-status.err { color: #ef4444; }
+.contact-form button[disabled] { opacity: .7; cursor: progress; }
+
 body.home-body .contact-content .info-block a { color: var(--heading); }
 body.home-body .contact-content .info-block a:hover { color: var(--accent); }
 
@@ -1031,6 +1044,16 @@ body.home-body .portfolio-section .portfolio-block .hover-box .category { color:
   body.home-body .right-content .welcome h4 { font-size: 24px; }
   .floating-actions #themeToggle { left: auto; right: 14px; top: auto; bottom: 72px; }
   .floating-actions #toTop { left: auto; right: 14px; bottom: 14px; }
+}
+
+/* Not enough left gutter for the buttons: dock them at the bottom right instead */
+@media (max-width: 1439px) {
+  .floating-actions #themeToggle { left: auto; right: 16px; top: auto; bottom: 76px; flex-direction: row-reverse; }
+  .floating-actions #toTop { left: auto; right: 16px; bottom: 16px; }
+  .floating-actions #themeToggle:hover,
+  .floating-actions #themeToggle:focus-visible { justify-content: flex-end; }
+  .floating-actions #themeToggle:hover .tl,
+  .floating-actions #themeToggle:focus-visible .tl { padding-right: 0; padding-left: 14px; }
 }
 
 
