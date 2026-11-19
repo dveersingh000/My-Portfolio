@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
-<link href="css/modern.css?v=74" rel="stylesheet">
+<link href="css/modern.css?v=89" rel="stylesheet">
 
 
 
@@ -111,7 +111,11 @@
                             </div>
                             <div class="info">
                                 <div class="name">Dharamveer Singh</div>
-                                <div class="designation"><i class="dot"></i> Full Stack Developer</div>
+                                <div class="designation"><i class="dot"></i> <span class="role-rot" data-roles="Full Stack Developer|React Specialist|Cloud &amp; DevOps Enthusiast">Full Stack Developer</span><span class="role-caret"></span></div>
+                                <div class="side-chips">
+                                    <span class="side-chip open"><i></i>Open to work</span>
+                                    <span class="side-chip"><span class="fas fa-map-marker-alt"></span> India</span>
+                                </div>
                             </div>
                         </div>
                         <div class="left-lower">
@@ -126,6 +130,16 @@
 
                                 </ul>
                             </nav>
+                            <div class="side-foot">
+                                <div class="side-progress"><span>Scroll progress</span><b class="side-pct">0%</b><div class="bar"><i></i></div></div>
+                                <div class="side-social">
+                                    <a href="https://github.com/dveersingh000" target="_blank" rel="noopener" aria-label="GitHub"><span class="fab fa-github"></span></a>
+                                    <a href="https://www.linkedin.com/in/dharamveer-singh-8585a72b3/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="fab fa-linkedin"></span></a>
+                                    <a href="https://stackoverflow.com/users/20928732/dharamveer-singh" target="_blank" rel="noopener" aria-label="Stack Overflow"><span class="fab fa-stack-overflow"></span></a>
+                                    <a href="https://twitter.com/Dharamv1997" target="_blank" rel="noopener" aria-label="Twitter"><span class="fab fa-twitter"></span></a>
+                                </div>
+                                <a class="side-cta" href="mailto:dveersingh000@gmail.com"><span class="fas fa-paper-plane"></span> Let's talk</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -646,22 +660,43 @@
                                     
                                         <!--Block-->
                                         <div class="interest-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon-box"><span class="icon def-icon"><img src="images/resource/icons/orange/cycle-1.png" alt=""></span><span class="icon hvr-icon"><img src="images/resource/icons/white/cycle-1.png" alt=""></span></div>
-                                                <h5>Cycling</h5>
+                                            <div class="inner-box int-card int-badminton">
+                                                <div class="int-icon">
+                                                    <svg viewBox="0 0 100 100" aria-hidden="true">
+                                                        <g class="racket"><ellipse cx="34" cy="38" rx="15" ry="19" transform="rotate(-35 34 38)" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 30l20 16M28 24l20 16M22 38l16 12" stroke="currentColor" stroke-width="1" opacity=".6"/><path d="M44 52L62 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></g>
+                                                        <g class="shuttle"><path d="M0 0l-6 -9h12z" fill="currentColor" opacity=".85"/><circle cx="0" cy="3" r="3.6" fill="currentColor"/></g>
+                                                    </svg>
+                                                </div>
+                                                <h5>Badminton</h5>
                                             </div>
                                         </div>
                                         <!--Block-->
                                         <div class="interest-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon-box"><span class="icon def-icon"><img src="images/resource/icons/orange/lcd-1.png" alt=""></span><span class="icon hvr-icon"><img src="images/resource/icons/white/lcd-1.png" alt=""></span></div>
-                                                <h5>Binge Watching</h5>
+                                            <div class="inner-box int-card int-ai">
+                                                <div class="int-icon">
+                                                    <svg viewBox="0 0 100 100" aria-hidden="true">
+                                                        <line x1="50" y1="22" x2="50" y2="32" stroke="currentColor" stroke-width="3"/><circle class="ant" cx="50" cy="18" r="4" fill="currentColor"/>
+                                                        <rect x="26" y="32" width="48" height="38" rx="12" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                        <circle class="eye" cx="40" cy="50" r="4.5" fill="currentColor"/><circle class="eye" cx="60" cy="50" r="4.5" fill="currentColor"/>
+                                                        <path d="M40 60q10 6 20 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                                        <path class="spark s1" d="M82 20l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="currentColor"/>
+                                                        <path class="spark s2" d="M16 66l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z" fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                                <h5>Playing with AI</h5>
                                             </div>
                                         </div>
                                         <!--Block-->
                                         <div class="interest-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon-box"><span class="icon def-icon"><img src="images/resource/icons/orange/gaming-1.png" alt=""></span><span class="icon hvr-icon"><img src="images/resource/icons/white/gaming-1.png" alt=""></span></div>
+                                            <div class="inner-box int-card int-gaming">
+                                                <div class="int-icon">
+                                                    <svg viewBox="0 0 100 100" aria-hidden="true">
+                                                        <g class="pad"><path d="M30 38h40a16 16 0 0 1 15 21l-3 10a8 8 0 0 1-13 3l-6-8H37l-6 8a8 8 0 0 1-13-3l-3-10a16 16 0 0 1 15-21z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                                                        <path class="dpad" d="M34 48v10M29 53h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                                        <circle class="btn b1" cx="66" cy="47" r="3.2" fill="currentColor"/><circle class="btn b2" cx="73" cy="53" r="3.2" fill="currentColor"/><circle class="btn b3" cx="66" cy="59" r="3.2" fill="currentColor"/><circle class="btn b4" cx="59" cy="53" r="3.2" fill="currentColor"/></g>
+                                                        <rect class="px p1" x="30" y="26" width="5" height="5" fill="currentColor"/><rect class="px p2" x="50" y="22" width="5" height="5" fill="currentColor"/><rect class="px p3" x="70" y="26" width="5" height="5" fill="currentColor"/>
+                                                    </svg>
+                                                </div>
                                                 <h5>Gaming</h5>
                                             </div>
                                         </div>
@@ -1093,7 +1128,7 @@
 <script src="js/wow.js"></script>
 <script src="js/appear.js"></script>
 <script src="js/custom-script.js"></script>
-<script src="js/modern.js?v=74"></script>
+<script src="js/modern.js?v=89"></script>
 </body>
 </html>
 
