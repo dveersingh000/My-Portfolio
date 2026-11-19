@@ -1205,3 +1205,8 @@ body.home-body .portfolio-block[data-featured] > .inner-box::after { right: auto
 .page-title.collapsible-title:hover h1 span { filter: brightness(1.15); }
 .sec-collapsible-sub > h4.collapsible-title { text-transform: uppercase; letter-spacing: .5px; }
 .collapsible-title:hover .collapse-caret { background: var(--accent); color: #fff; }
+
+/* Sub-title underline grows on hover, like the page titles */
+body.home-body .sec-collapsible-sub > h4.collapsible-title::after { transition: width .5s ease; }
+body.home-body .sec-collapsible-sub > h4.collapsible-title:hover::after { width: 72px; }
+body.home-body .resume-content .collapsible-title:hover .icon { background: var(--grad); }
