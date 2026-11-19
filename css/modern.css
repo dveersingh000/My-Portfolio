@@ -1471,10 +1471,13 @@ body.home-body .left-bar .left-upper .info .designation { min-height: 20px; whit
   body.home-body.grey-left-bar .main-nav .navigation li.current > a::after { line-height: 26px; }
 }
 
-/* Keep the weekend switch on the right edge (vertical) instead of floating above the page on narrower desktops */
+/* Narrower desktops have no side gutter: dock the weekend switch as a compact pill above the floating buttons */
 @media (min-width: 992px) and (max-width: 1299px) {
   .mode-switch {
-    position: fixed; top: 0; left: -46px; padding: 0 200px 0 0;
-    -ms-transform: rotate(-90deg) scale(.8); transform: rotate(-90deg) scale(.8);
+    position: fixed; top: auto; left: auto; right: 12px; bottom: 136px; width: 104px; padding: 0;
+    -ms-transform: none; transform: none; z-index: 9998 !important;
   }
+  .mode-switch .switcher { width: 104px; height: auto; float: none; }
+  .mode-switch .switcher::before, .mode-switch .switcher::after, .mode-switch .switcher .left-text { display: none; }
+  .mode-switch .switcher .switch-btn { float: none; width: 104px; transform: none; background: #14141c; border-radius: 30px; box-shadow: 0 8px 22px -8px rgba(0,0,0,.7); }
 }
