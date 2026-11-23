@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
-<link href="css/modern.css?v=89" rel="stylesheet">
+<link href="css/modern.css?v=94" rel="stylesheet">
 
 
 
@@ -46,6 +46,24 @@
 <div class="body-bg" style="background-image: url(images/background/fff.png);"></div>
 
 <div class="page-wrapper">
+<header class="topnav" id="topnav">
+    <div class="topnav-in">
+        <a class="tn-logo" href="#home-section" aria-label="Home"><span>DS</span><b>Dharamveer<em>.dev</em></b></a>
+        <nav class="tn-links" aria-label="Primary">
+            <a href="#home-section" data-spy="home-section">Home</a>
+            <a href="#skills-section" data-spy="skills-section">Skills</a>
+            <a href="#experience-section" data-spy="experience-section">Experience</a>
+            <a href="#education-section" data-spy="education-section">Education</a>
+            <a href="#certs-section" data-spy="certs-section">Certifications</a>
+            <a href="#interests-section" data-spy="interests-section">Interests</a>
+            <a href="#work-section" data-spy="work-section">Projects</a>
+            <a href="#contact-section" data-spy="contact-section">Contact</a>
+        </nav>
+        <a class="tn-cta" href="https://drive.google.com/file/d/1tgpcq0Z8CkMFAM0eDOPBR2ZOd1D2TnFP/view?usp=sharing" target="_blank" rel="noopener"><span class="fas fa-download"></span> Resume</a>
+    </div>
+    <i class="tn-progress"></i>
+</header>
+
   
     <!-- Preloader -->
     <div class="preloader"><div class="icon"></div></div>
@@ -152,30 +170,40 @@
 
 
 
-
-
-                                <!-- resumeeee link hereeeeeeeeeeeeeeeeeeeeeee -->
-
-
-
-                                <!---Download CV-->
-                                <div class="download-cv"><a href="https://drive.google.com/file/d/1tgpcq0Z8CkMFAM0eDOPBR2ZOd1D2TnFP/view?usp=sharing" target="_blank" class="theme-btn download-btn"><i class="icon"><img src="images/resource/icons/white/cv-1.png" alt=""></i><span class="txt">Download CV</span></a></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                <!--Welcome-->
-                                <div class="welcome">
-                                    <h4>Hello ,  Great to see you here !</h4>
-                                    <div class="text"> I'm a Full Stack Software Developer with 4+ years of experience building responsive, API-driven applications with React.js, Node.js, Express.js, JavaScript, and MongoDB. I have worked on consolidating multi-portal applications, stabilising role-based client workflows, and developing backend APIs, with hands-on project experience in AWS, CI/CD, Docker, Kubernetes, Terraform, and DevSecOps.</div>
+                                <!--Hero-->
+                                <div class="welcome hero">
+                                    <div class="hero-grid">
+                                        <div class="hero-copy">
+                                            <span class="hero-hi"><i></i>Open to work &middot; India</span>
+                                            <h1 class="hero-name">Hi, I'm <span>Dharamveer Singh</span></h1>
+                                            <div class="text">Full Stack Developer with 4+ years of experience building responsive, API-driven applications with React.js, Node.js, Express.js, JavaScript, and MongoDB, plus hands-on cloud work across AWS, CI/CD, Docker, Kubernetes, Terraform, and DevSecOps.</div>
+                                            <div class="hero-cta">
+                                                <a class="hbtn primary" href="#work-section"><span class="fas fa-rocket"></span> View my work</a>
+                                                <a class="hbtn" href="https://drive.google.com/file/d/1tgpcq0Z8CkMFAM0eDOPBR2ZOd1D2TnFP/view?usp=sharing" target="_blank" rel="noopener"><span class="fas fa-download"></span> Download CV</a>
+                                                <a class="hbtn ghost" href="#contact-section"><span class="fas fa-paper-plane"></span> Let's talk</a>
+                                            </div>
+                                            <div class="hero-social">
+                                                <a href="https://github.com/dveersingh000" target="_blank" rel="noopener" aria-label="GitHub"><span class="fab fa-github"></span></a>
+                                                <a href="https://www.linkedin.com/in/dharamveer-singh-8585a72b3/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="fab fa-linkedin"></span></a>
+                                                <a href="https://stackoverflow.com/users/20928732/dharamveer-singh" target="_blank" rel="noopener" aria-label="Stack Overflow"><span class="fab fa-stack-overflow"></span></a>
+                                                <a href="https://twitter.com/Dharamv1997" target="_blank" rel="noopener" aria-label="Twitter"><span class="fab fa-twitter"></span></a>
+                                                <a href="mailto:dveersingh000@gmail.com" aria-label="Email"><span class="fas fa-envelope"></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="hero-visual" aria-hidden="true">
+                                            <div class="hero-photo"><img src="images/resource/img01.jpg" alt=""></div>
+                                            <span class="orb o1"><i class="devicon-react-original colored"></i></span>
+                                            <span class="orb o2"><i class="devicon-nodejs-plain colored"></i></span>
+                                            <span class="orb o3"><i class="devicon-docker-plain colored"></i></span>
+                                            <span class="orb o4"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span>
+                                            <span class="orb o5"><i class="devicon-mongodb-plain colored"></i></span>
+                                        </div>
+                                    </div>
+                                    <a class="hero-scroll" href="#skills-section" aria-label="Scroll down"><span></span></a>
                                 </div>
 
                                 <!--About Me-->
-                                <div class="about-me">
+                                <div class="about-me" id="skills-section">
 
                                     <!--Proficiency-->
                                     <div class="proficiency">
@@ -346,7 +374,7 @@
                                
 
                                 <!--Experience-->
-                                <div class="education experience">
+                                <div class="education experience" id="experience-section">
                                     <div class="main-title">
                                         <span class="icon"><img src="images/resource/icons/experience-1.png" alt=""></span>
                                         <span class="txt">Experience</span>
@@ -431,7 +459,7 @@
 
 
                                 <!--Education-->
-                                <div class="education">
+                                <div class="education" id="education-section">
                                     <div class="main-title">
                                         <span class="icon"><img src="images/resource/icons/education-1.png" alt=""></span>
                                         <span class="txt">Education</span>
@@ -485,7 +513,7 @@
                                
 
                                    <!--Award-->
-                                   <div class="awards">
+                                   <div class="awards" id="certs-section">
                                     <div class="main-title">
                                         <span class="icon"><img src="images/resource/icons/award-1.png" alt=""></span>
                                         <span class="txt">achievements</span>
@@ -651,7 +679,7 @@
 
 
                                  <!--Interests-->
-                                 <div class="interests">
+                                 <div class="interests" id="interests-section">
                                     <div class="main-title">
                                         <span class="icon"><img src="images/resource/icons/interest-1.png" alt=""></span>
                                         <span class="txt">Interests</span>
@@ -1128,7 +1156,7 @@
 <script src="js/wow.js"></script>
 <script src="js/appear.js"></script>
 <script src="js/custom-script.js"></script>
-<script src="js/modern.js?v=89"></script>
+<script src="js/modern.js?v=94"></script>
 </body>
 </html>
 
