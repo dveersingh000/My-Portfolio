@@ -535,3 +535,10 @@
     }
   });
 })();
+document.addEventListener("click", function (e) {
+  var b = e.target.closest && e.target.closest("#ctCopy");
+  if (!b) return;
+  var done = function () { b.classList.add("done"); b.innerHTML = '<span class="fa fa-check"></span>'; setTimeout(function () { b.classList.remove("done"); b.innerHTML = '<span class="far fa-copy"></span>'; }, 1800); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute("data-copy")).then(done);
+  else done();
+});
