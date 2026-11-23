@@ -2,108 +2,136 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Dharamveer it's weekend !!!</title>
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<title>It's Weekend! | Dharamveer Singh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link href="css/responsive.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bungee&display=swap" rel="stylesheet">
+<link href="css/weekend.css?v=1" rel="stylesheet">
 </head>
+<body>
 
-<body class="weekend-mode">
+<div class="wk-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wk-float" id="wkFloat" aria-hidden="true"></div>
+<canvas id="wkConfetti" aria-hidden="true"></canvas>
 
-<div class="body-bg" style="background-image: url(images/background/weekend-final.png);"></div>
+<header class="wk-nav">
+    <a class="wk-logo" href="index.html"><span>DS</span><b>Dharamveer<em>.dev</em></b></a>
+    <a class="wk-back" href="index.html" title="Back to the portfolio">
+        <b>Weekend mode</b><span class="sw"><i></i></span><em>Back to portfolio</em>
+    </a>
+</header>
 
-<div class="page-wrapper">
-  
-    <!-- Preloader -->
-    <div class="preloader"><div class="icon"></div></div>
-  
-   
-    <!-- Site Container-->
-    <div class="site-container">
-
-        <div class="mode-switch">
-            <div class="switcher clearfix">
-                <div class="left-text">Weekend Mode</div>
-                <div class="switch-btn"><div class="btn-inner"><div class="circle"></div><div class="txt">ON</div></div><a href="index.html"></a></div>
-            </div>
+<main>
+    <section class="wk-hero">
+        <span class="wk-eyebrow"><i></i> SAT &middot; SUN &middot; no deadlines</span>
+        <h1 class="wk-title" id="wkTitle" aria-label="It's Weekend!">It's Weekend!</h1>
+        <p class="wk-sub">Right now I'm <span id="wkTyped"></span><span class="wk-caret"></span></p>
+        <p class="wk-lead">Two days that are only for me. Monday to Friday I ship code; on weekends I smash shuttles, chase new places and new food, lose at UNO, build side projects and poke at AI.</p>
+        <div class="wk-cta">
+            <button class="wk-btn hot" id="wkParty" type="button">🎉 Throw confetti</button>
+            <a class="wk-btn" href="#wkWheel">🎡 Spin the weekend wheel</a>
+            <a class="wk-btn ghost" href="index.html">← Back to portfolio</a>
         </div>
+    </section>
 
-        <div class="auto-container">
-            <div class="weekend-content row clearfix">
-                <!--Text Column-->
-                <div class="text-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <h3>Hurray it's  Weekend :)</h3>
-                        <div class="text">
-
-                            <p>I like to spend my weekends relaxing and doing some things which give me positive vibes.
-                                <br> These include art, watching movies, learning new languages, heading out for short trips etc. 
-                                 I will try to finish the web series that I started watching way  back ago. </p>
-
-                             <p>
-                                I have two precious days that are dedicated only for me. Sometimes I start any new Project
-                                or continue unifinished Projects to enhance my  technical skills.
-
-                                There are no deadlines, pressure or stress. I can decide what I want to build and start whenever I like.
-                                    Even if I haven't finished it for one weekend, nothing bad can happen. I can always continue the next. 
-                                    For me personally, this part of the week has contributed the most to my personal development as a Software Developer.
-
- </p>    
-<P>
-    Also it's weekend so I can make time for family and friends. I will go out with my family for dinner  to spend quality time with them.
-    One of my hobby is cycling , so occasionally I  ride my bicycle in morning for some kilometers. I like to play badminton as well .
-
-</P>
-<br>
-<p>𝒞𝒽𝒾𝓁𝓁 𝒶𝓃𝒹 𝑒𝓃𝒿𝑜𝓎  𝓉𝒽𝑒 𝒲𝑒𝑒𝓀𝑒𝓃𝒹 ! </p>
-
-
-
-<!-- 
-                            <p>My hobby is riding a my motorcycle. I ride a dark orange Kawasaki W800. The engine is very powerful. <br> It is not a fashionable racing motorcycle,; it is an old styled nostalgic one. I think that my favorite uncle had a similar one when I was a child. </p>
-                            <p>When I first saw the Kawasaki W800 in a motorcycle shop 6 six months ago, I fell in love with her. I felt that she was saying, “Get me, please.”. Please But Unfortunately, the price was over my budget. So, I decided to save money to get her. Finally she became mine last month. </p>
-                            <p>I ride her everyday to commute. I live in Yokohama and my work place is in Tokyo. It takes about 45 minutes by using the Daisan-Keihin h Highway called Daisan-Keihin. </p>
-                            <p>The faster I run ride, the more strongly the wind pushes against my body. One On the highway, It is fun though, but it is not easy.</p>
-                            <p>The best season for riding a motorcycle is spring. I can feel comfortable, warm wind against my face and enjoy the cherry blossoms beside the highway.</p>
-                       
-                        -->
-                       
-                        </div>
-                    </div>
-                </div>
-                <!--Image Column-->
-                <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <div class="image-layer" style="background-image: url(images/background/weekend-pic.png);"></div>
-                        <div class="image"><img src="images/background/weekend-pic.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
+    <div class="wk-ticker" aria-hidden="true">
+        <div class="track">
+            <span>🏸 Badminton</span><span>🗺️ New places</span><span>🍜 Food trials</span><span>🃏 UNO nights</span><span>🎮 Online games</span><span>💻 Side projects</span><span>🤖 Exploring AI</span><span>🏍️ Bike rides</span>
+            <span>🏸 Badminton</span><span>🗺️ New places</span><span>🍜 Food trials</span><span>🃏 UNO nights</span><span>🎮 Online games</span><span>💻 Side projects</span><span>🤖 Exploring AI</span><span>🏍️ Bike rides</span>
         </div>
     </div>
-    <!--End Site Container -->
-    
-    
-</div>
-<!--End pagewrapper-->
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up"></span></div>
+    <section class="wk-section">
+        <h2 class="wk-h">What my weekends are made of</h2>
+        <div class="wk-grid">
+            <article class="wk-card c-bad" data-tilt>
+                <div class="art"><span class="racket">🏸</span><span class="shuttle">🪶</span></div>
+                <h3>Badminton, twice</h3>
+                <p>Morning session to wake up and an evening one to burn off the week. Smashes, rallies and a lot of trash talk.</p>
+                <em>Sat &amp; Sun &middot; 6:30 AM + 5:30 PM</em>
+            </article>
+            <article class="wk-card c-trip" data-tilt>
+                <div class="art"><span class="pin">📍</span><span class="ripple"></span></div>
+                <h3>Go places</h3>
+                <p>Short trips, hidden cafes, viewpoints and old streets. If it's new to me, I'm going.</p>
+                <em>Explore mode: on</em>
+            </article>
+            <article class="wk-card c-food" data-tilt>
+                <div class="art"><span class="bowl">🍜</span><span class="steam"><i></i><i></i><i></i></span></div>
+                <h3>Try different foods</h3>
+                <p>New cuisines, street food and anything with a queue outside. Every weekend one new dish.</p>
+                <em>Rating everything /10</em>
+            </article>
+            <article class="wk-card c-game" data-tilt>
+                <div class="art"><span class="cardfan"><b>🂡</b><b>🂱</b><b>🃁</b></span></div>
+                <h3>Online games &amp; UNO</h3>
+                <p>Card games, UNO with friends and some online matches. +4 on me? You will regret it.</p>
+                <em>Draw four. No mercy.</em>
+            </article>
+            <article class="wk-card c-proj" data-tilt>
+                <div class="art"><span class="code">&lt;/&gt;</span><span class="cursor"></span></div>
+                <h3>Build side projects</h3>
+                <p>No sprint, no stand-up. I start something small, break it, fix it and learn more than any weekday.</p>
+                <em>git commit -m "weekend vibes"</em>
+            </article>
+            <article class="wk-card c-ai" data-tilt>
+                <div class="art"><span class="bot">🤖</span><b class="sp s1">✦</b><b class="sp s2">✦</b><b class="sp s3">✧</b></div>
+                <h3>Explore AI</h3>
+                <p>Trying new models, agents and tools. Prompting, building little AI helpers and seeing what breaks.</p>
+                <em>Playing with AI</em>
+            </article>
+            <article class="wk-card c-bike" data-tilt>
+                <div class="art"><span class="road"></span><span class="bike">🏍️</span></div>
+                <h3>Bike rides</h3>
+                <p>Open road, early air and no destination. The best thinking happens at 60 km/h.</p>
+                <em>Helmet on. Playlist on.</em>
+            </article>
+            <article class="wk-card c-chill" data-tilt>
+                <div class="art"><span class="heart">💛</span></div>
+                <h3>Family &amp; friends</h3>
+                <p>Dinners, long calls, jokes and doing absolutely nothing together. Recharge complete.</p>
+                <em>Battery: 100%</em>
+            </article>
+        </div>
+    </section>
 
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/knob.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/custom-script.js"></script>
+    <section class="wk-section">
+        <h2 class="wk-h">A weekend, hour by hour</h2>
+        <div class="wk-tabs" role="tablist">
+            <button class="on" data-day="sat" type="button">Saturday</button>
+            <button data-day="sun" type="button">Sunday</button>
+        </div>
+        <ol class="wk-timeline" id="wkTimeline"></ol>
+    </section>
+
+    <section class="wk-section wk-wheel-sec" id="wkWheel">
+        <h2 class="wk-h">Can't decide? Spin the wheel</h2>
+        <div class="wk-wheel-wrap">
+            <div class="wk-pointer"></div>
+            <canvas id="wkWheelCv" width="420" height="420"></canvas>
+            <button class="wk-spin" id="wkSpin" type="button">SPIN</button>
+        </div>
+        <p class="wk-result" id="wkResult">Tap spin and let fate pick my weekend plan.</p>
+    </section>
+
+    <section class="wk-section">
+        <h2 class="wk-h">Weekend vibe meter</h2>
+        <div class="wk-meters">
+            <div class="m"><span>Fun</span><div><i style="--w:98%"></i></div><b>98%</b></div>
+            <div class="m"><span>Energy</span><div><i style="--w:92%"></i></div><b>92%</b></div>
+            <div class="m"><span>Food</span><div><i style="--w:100%"></i></div><b>100%</b></div>
+            <div class="m"><span>Code (just for fun)</span><div><i style="--w:70%"></i></div><b>70%</b></div>
+            <div class="m"><span>Deadlines</span><div><i style="--w:0%"></i></div><b>0%</b></div>
+        </div>
+    </section>
+</main>
+
+<footer class="wk-foot">
+    <p>Monday is coming, but so is the next weekend. 😎</p>
+    <a class="wk-btn hot" href="index.html">← Back to the portfolio</a>
+</footer>
+
+<script src="js/weekend.js?v=1"></script>
 </body>
 </html>
