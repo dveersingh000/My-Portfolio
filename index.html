@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
-<link href="css/modern.css?v=96" rel="stylesheet">
+<link href="css/modern.css?v=102" rel="stylesheet">
 
 
 
@@ -99,7 +99,6 @@
                     <div class="social-links">
                         <div class="social-btn"><i class="icon">+</i></div>
                         <ul class="links clearfix">
-                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
                             <li><a href="https://github.com/dveersingh000"><span class="fab fa-github"></a></li>  
                             <li><a href="https://stackoverflow.com/users/20928732/dharamveer-singh"><span class="fab fa-stack-overflow"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/dveersingh"><span class="fab fa-linkedin"></span></a></li>
@@ -124,7 +123,6 @@
                                 <div class="social-links">
                                     <div class="social-btn"><i class="icon">+</i></div>
                                     <ul class="links clearfix">
-                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
                             <li><a href="https://github.com/dveersingh000"><span class="fab fa-github"></a></li>  
                             <li><a href="stackoverflow.com/users/20928732/dharamveer-singh"><span class="fab fa-stack-overflow"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/dveersingh"><span class="fab fa-linkedin"></span></a></li>
@@ -333,29 +331,18 @@
                                     <!--Languages-->
                                     <div class="languages">
                                         <h4>Languages</h4>
-                                        <div class="row clearfix">
-                                            <!--Language Block-->
-                                            <div class="language-block col-lg-6 col-md-6 col-sm-12">
-                                                <div class="inner-box">
-                                                    <div class="graph-outer">
-                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="85">
-                                                        <div class="inner-text count-box"><span class="count-text" data-stop="85" data-speed="500"></span>%</div>
-                                                    </div>
-                                                    <div class="text">English </div>
-                                                    <!-- <div class="text">English <br>Experience</div> -->
-                                                </div>
+                                        <div class="lang-grid">
+                                            <div class="lang-card">
+                                                <span class="lang-flag">EN</span>
+                                                <div class="lang-info"><h5>English</h5><p>Professional working proficiency</p></div>
+                                                <span class="lang-dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
                                             </div>
-                                            <!--Language Block-->
-                                            <div class="language-block col-lg-6 col-md-6 col-sm-12">
-                                                <div class="inner-box">
-                                                    <div class="graph-outer">
-                                                        <input type="text" class="dial" data-fgColor="#fd7030" data-bgColor="#7b8499" data-width="200" data-height="200" data-linecap="normal"  value="100">
-                                                        <div class="inner-text count-box"><span class="count-text" data-stop="100" data-speed="500"></span>%</div>
-                                                    </div>
-                                                    <div class="text">Hindi </div>
-                                                    <!-- <div class="text">French <br>Experience</div> -->
-                                                </div>
+                                            <div class="lang-card">
+                                                <span class="lang-flag">HI</span>
+                                                <div class="lang-info"><h5>Hindi</h5><p>Native</p></div>
+                                                <span class="lang-dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
                                             </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div><!--End About Me--> 
@@ -998,81 +985,74 @@
                             
                             <div class="contact-content" id="contact-section">
                                 <div class="page-title sec-title"><h1><span>Contact</span></h1></div>
-                                <!--Text-->
-                                <div class="upper-text">
-                                    <h4>Get in touch</h4>
-                                    <div class="text">Want to get in touch ?  I would love to connect with you . Here is how you can reach out to me . . .</div>
-                                </div>
 
-                                <div class="info-box">
-                                    <div class="row clearfix">
+                                <div class="ct-wrap">
+                                    <div class="ct-left">
+                                        <span class="ct-badge"><i></i> Available for new opportunities</span>
+                                        <h3 class="ct-head">Let's build something <em>great</em> together.</h3>
+                                        <p class="ct-sub">Have a project, a role or just an idea? Drop me a message and I will get back to you within a day.</p>
 
-                                        <!--Info Block-->
-                                        <div class="info-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon"><span class="fa fa-envelope"></span></div>
-                                                <div class="text"><a href="mailto:dveersingh000@gmail.com">dveersingh000@gmail.com</a></div>
+                                        <div class="ct-cards">
+                                            <div class="ct-card">
+                                                <span class="ct-ico"><span class="fa fa-envelope"></span></span>
+                                                <div class="ct-txt"><small>Email</small><a href="mailto:dveersingh000@gmail.com">dveersingh000@gmail.com</a></div>
+                                                <button type="button" class="ct-copy" id="ctCopy" data-copy="dveersingh000@gmail.com" aria-label="Copy email"><span class="far fa-copy"></span></button>
                                             </div>
+                                            <div class="ct-card">
+                                                <span class="ct-ico"><span class="fa fa-map-marker-alt"></span></span>
+                                                <div class="ct-txt"><small>Location</small><a href="https://www.google.com/maps/search/?api=1&query=Bangalore%2C%20India" target="_blank" rel="noopener">Bangalore, India</a></div>
+                                            </div>
+                                            <div class="ct-card">
+                                                <span class="ct-ico"><span class="fab fa-linkedin-in"></span></span>
+                                                <div class="ct-txt"><small>LinkedIn</small><a href="https://www.linkedin.com/in/dharamveer-singh-8585a72b3/" target="_blank" rel="noopener">dharamveer-singh</a></div>
+                                            </div>
+                                            <div class="ct-card">
+                                                <span class="ct-ico"><span class="fab fa-github"></span></span>
+                                                <div class="ct-txt"><small>GitHub</small><a href="https://github.com/dveersingh000" target="_blank" rel="noopener">dveersingh000</a></div>
+                                            </div>
+                                                                                            <div class="ct-card">
+                                                                                                <span class="ct-ico"><span class="far fa-clock"></span></span>
+                                                                                                <div class="ct-txt"><small>Reply time</small><span class="ct-plain">Within 24 hours</span></div>
+                                                                                            </div>
                                         </div>
-                                        <!--Info Block-->
-                                        <!-- <div class="info-block col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon"><span class="fa fa-linkedin"></span></div>
-                                                <div class="text"><a href="tel:+38349123456">+38349 123 456</a></div>
-                                            </div>
-                                        </div> -->
-                                        <!--Info Block-->
-                                        <div class="info-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                            <div class="inner-box">
-                                                <div class="icon"><span class="fa fa-map-marker-alt"></span></div>
-                                                <div class="text"><a href="https://www.google.com/maps/search/?api=1&query=Bangalore%2C%20India" target="_blank" rel="noopener">Bangalore, India</a></div>
-                                            </div>
-                                        </div>
-
                                     </div>
-                                </div>
 
-                                <!--Form Box-->
-                                <div class="form-box">
-                                    <h4>Message me</h4>
-                                    <div class="contact-form">
-                                        <form id="contact-form">
-                                            <div class="row clearfix">
-                                                <div class="field-group col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label for="name" class="field-label"><span class="icon fa fa-user"></span></label>
-                                                        <input type="text" name="fieldname" id="Uname" value="" placeholder="Name" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="email" class="field-label"><span class="icon far fa-envelope"></span></label>
-                                                        <input type="email" name="fieldname" id="email" value="" placeholder="E-mail" required>
-                                                    </div>
-                                                    <!-- <div class="form-group">
-                                                        <label for="website" class="field-label"><span class="icon fa fa-link"></span></label>
-                                                        <input type="url" name="fieldname" id="website" value="" placeholder="Website" required>
-                                                    </div> -->
+                                    <div class="ct-right">
+                                        <div class="ct-form-head"><span class="fa fa-paper-plane"></span> Send me a message</div>
+                                        <div class="contact-form">
+                                            <form id="contact-form">
+                                                <div class="ct-field">
+                                                    <input type="text" name="fieldname" id="Uname" placeholder=" " required>
+                                                    <label for="Uname">Your name</label>
                                                 </div>
-                                                <div class="field-group col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <textarea name="fieldname" id="message" placeholder="Message" required></textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="submit" class="theme-btn btn-style-one"><span>Send message</span></button>
-                                                    </div>
+                                                <div class="ct-field">
+                                                    <input type="email" name="fieldname" id="email" placeholder=" " required>
+                                                    <label for="email">Your email</label>
                                                 </div>
-                                            </div>
-                                        </form>
+                                                <div class="ct-field">
+                                                    <textarea name="fieldname" id="message" placeholder=" " rows="5" required></textarea>
+                                                    <label for="message">Your message</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="ct-send"><span>Send message</span><i class="fa fa-paper-plane"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
-
-                        </div>
                     </div>
 
                     <!--Copyright-->
                     <div class="site-footer">
-                        <div class="copyright">&copy; 2022 @Dharamveer Singh, All Rights Reserved</div>
+                        <div class="ft-social">
+                            <a href="https://github.com/dveersingh000" target="_blank" rel="noopener" aria-label="GitHub"><span class="fab fa-github"></span></a>
+                            <a href="https://www.linkedin.com/in/dharamveer-singh-8585a72b3/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="fab fa-linkedin-in"></span></a>
+                            <a href="https://twitter.com/Dharamv1997" target="_blank" rel="noopener" aria-label="Twitter"><span class="fab fa-twitter"></span></a>
+                            <a href="mailto:dveersingh000@gmail.com" aria-label="Email"><span class="fa fa-envelope"></span></a>
+                        </div>
+                        <div class="copyright">Designed &amp; built by <b>Dharamveer Singh</b> &middot; &copy; 2026</div>
                     </div>
 
                 </div>
@@ -1160,7 +1140,7 @@
 <script src="js/wow.js"></script>
 <script src="js/appear.js"></script>
 <script src="js/custom-script.js"></script>
-<script src="js/modern.js?v=96"></script>
+<script src="js/modern.js?v=102"></script>
 </body>
 </html>
 

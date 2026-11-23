@@ -535,3 +535,33 @@
     }
   });
 })();
+document.addEventListener("click", function (e) {
+  var b = e.target.closest && e.target.closest("#ctCopy");
+  if (!b) return;
+  var done = function () { b.classList.add("done"); b.innerHTML = '<span class="fa fa-check"></span>'; setTimeout(function () { b.classList.remove("done"); b.innerHTML = '<span class="far fa-copy"></span>'; }, 1800); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute("data-copy")).then(done);
+  else done();
+});
+
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".expertise-block .text, .edu-block .text, .award-block .text").forEach(function (el) {
+      var n = el.firstChild;
+      if (n && n.nodeType === 3 && /^\s*\u2022\s*/.test(n.nodeValue)) {
+        n.nodeValue = n.nodeValue.replace(/^\s*\u2022\s*/, "");
+        el.classList.add("bul");
+      }
+    });
+    if (window.matchMedia("(hover: hover) and (min-width: 992px)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var g = document.createElement("div");
+      g.className = "cursor-glow";
+      document.body.appendChild(g);
+      var x = 0, y = 0, raf = 0;
+      document.addEventListener("mousemove", function (e) {
+        x = e.clientX; y = e.clientY; g.classList.add("on");
+        if (!raf) raf = requestAnimationFrame(function () { g.style.transform = "translate(" + x + "px," + y + "px)"; raf = 0; });
+      });
+      document.addEventListener("mouseleave", function () { g.classList.remove("on"); });
+    }
+  });
+})();
