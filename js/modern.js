@@ -294,7 +294,7 @@
     themeBtn.id = "themeToggle";
     themeBtn.type = "button";
     themeBtn.setAttribute("aria-label", "Toggle light and dark theme");
-    var topBtn = el("button", "", "&#8679;");
+    var topBtn = el("button", "", '<svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"></circle></svg><svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"></path></svg>');
     topBtn.id = "toTop";
     topBtn.type = "button";
     topBtn.setAttribute("aria-label", "Back to top");
@@ -304,6 +304,7 @@
 
     function paintThemeIcon() {
       var dark = root.getAttribute("data-theme") === "dark";
+      var tnT = document.getElementById("tnTheme"); if (tnT) tnT.innerHTML = dark ? "&#9728;" : "&#9790;";
       themeBtn.innerHTML = '<span class="ti">' + (dark ? "&#9728;" : "&#9790;") + '</span><span class="tl">' + (dark ? "Light mode" : "Dark mode") + "</span>";
     }
     paintThemeIcon();
@@ -359,7 +360,7 @@
     var welcome = document.querySelector(".welcome");
     if (welcome) {
       var line = el("div", "typed-line", 'I build <span class="typed"></span><span class="caret"></span>');
-      welcome.insertBefore(line, welcome.querySelector(".text"));
+      var htext = welcome.querySelector(".text"); htext.parentNode.insertBefore(line, htext);
       var typed = line.querySelector(".typed");
       var roles = ["responsive React.js apps", "scalable Node.js APIs", "cloud-ready deployments", "reliable DevOps pipelines"];
       if (reduceMotion) {
@@ -406,8 +407,7 @@
         card.innerHTML = '<div class="num" data-to="' + s[0] + '" data-suffix="' + s[1] + '">0' + s[1] + '</div><div class="lbl">' + s[2] + "</div>";
         row.appendChild(card);
       });
-      var about = document.querySelector(".about-me");
-      if (about) about.parentNode.insertBefore(row, about);
+      welcome.appendChild(row);
     }
 
     function countUp(n) {
@@ -486,6 +486,52 @@
       window.addEventListener("scroll", upd, { passive: true });
       window.addEventListener("resize", upd);
       upd();
+    }
+
+    /* Top navbar: scrollspy, scrolled state, progress line */
+    var topnav = document.getElementById("topnav");
+    if (topnav) {
+      var tlinks = Array.prototype.slice.call(topnav.querySelectorAll(".tn-links a"));
+      var secs = tlinks.map(function (a) { return document.getElementById(a.getAttribute("data-spy")); });
+      var tprog = topnav.querySelector(".tn-progress"); var ttop = document.getElementById("toTop");
+      var tnTheme = document.getElementById("tnTheme");
+      if (tnTheme) tnTheme.addEventListener("click", function () { document.getElementById("themeToggle").click(); });
+      var spy = function () {
+        var y = window.scrollY;
+        topnav.classList.toggle("scrolled", y > 20);
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        tprog.style.width = (h > 0 ? y / h * 100 : 0) + "%";
+        if (ttop) ttop.style.setProperty("--p", h > 0 ? y / h : 0);
+        var line = window.innerHeight * 0.35, cur = 0;
+        secs.forEach(function (s, i) {
+          if (s && s.getBoundingClientRect().top <= line) cur = i;
+        });
+        if (window.innerHeight + y >= document.documentElement.scrollHeight - 4) cur = secs.length - 1;
+        tlinks.forEach(function (a, i) { a.classList.toggle("active", i === cur); });
+      };
+      window.addEventListener("scroll", spy, { passive: true });
+      window.addEventListener("resize", spy);
+      spy();
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a || a.getAttribute("href").length < 2) return;
+        var t = document.querySelector(a.getAttribute("href"));
+        if (!t || !a.closest(".topnav, .hero")) return;
+        e.preventDefault();
+        var top = a.getAttribute("href") === "#home-section" ? 0 : t.getBoundingClientRect().top + window.scrollY - 84;
+        window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    }
+
+    /* Hero photo: 3D tilt following the pointer */
+    var hv = document.querySelector(".hero-visual"), hg = document.querySelector(".hero-grid");
+    if (hv && hg && !reduceMotion) {
+      hg.addEventListener("mousemove", function (e) {
+        var r = hg.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        hv.style.transform = "perspective(900px) rotateY(" + (x * 16) + "deg) rotateX(" + (-y * 16) + "deg)";
+      });
+      hg.addEventListener("mouseleave", function () { hv.style.transform = ""; });
     }
   });
 })();
