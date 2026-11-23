@@ -518,5 +518,16 @@
         window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
       });
     }
+
+    /* Hero photo: 3D tilt following the pointer */
+    var hv = document.querySelector(".hero-visual"), hg = document.querySelector(".hero-grid");
+    if (hv && hg && !reduceMotion) {
+      hg.addEventListener("mousemove", function (e) {
+        var r = hg.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        hv.style.transform = "perspective(900px) rotateY(" + (x * 16) + "deg) rotateX(" + (-y * 16) + "deg)";
+      });
+      hg.addEventListener("mouseleave", function () { hv.style.transform = ""; });
+    }
   });
 })();
