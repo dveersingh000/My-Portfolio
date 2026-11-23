@@ -1713,3 +1713,44 @@ body.home-body .right-content .hero .text {
   .hero-visual .orb.o2 { --a: 72deg; } .hero-visual .orb.o3 { --a: 144deg; } .hero-visual .orb.o4 { --a: 216deg; } .hero-visual .orb.o5 { --a: 288deg; }
   .hero-copy > *, .hero-visual { animation: none; opacity: 1; }
 }
+
+/* ---------- Navbar controls, back-to-top ring ---------- */
+.tn-actions { display: flex; align-items: center; gap: 10px; }
+.tn-weekend {
+  display: inline-flex; align-items: center; gap: 9px; padding: 6px 14px 6px 7px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border); text-decoration: none !important;
+  color: var(--text); font-size: 13px; font-weight: 600; white-space: nowrap;
+  backdrop-filter: blur(14px); transition: border-color 0.3s, color 0.3s, transform 0.3s;
+}
+.tn-weekend .sw { position: relative; width: 38px; height: 22px; border-radius: 999px; background: rgba(125,134,156,.35); transition: background 0.3s; }
+.tn-weekend .sw i { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform 0.35s cubic-bezier(.3,1.5,.5,1); }
+.tn-weekend:hover { border-color: var(--accent-2); color: var(--heading); transform: translateY(-2px); }
+.tn-weekend:hover .sw { background: var(--accent-2); }
+.tn-weekend:hover .sw i { transform: translateX(16px); }
+.tn-theme {
+  width: 42px; height: 42px; border-radius: 50%; font-size: 17px; cursor: pointer;
+  color: var(--heading); background: var(--card); border: 1px solid var(--border);
+  backdrop-filter: blur(14px); transition: transform 0.4s cubic-bezier(.2,.8,.2,1), background 0.3s, color 0.3s;
+}
+.tn-theme:hover { background: var(--grad); color: #fff; transform: rotate(35deg) scale(1.08); }
+
+@media (min-width: 992px) {
+  body.home-body .mode-switch { display: none !important; }
+  .floating-actions #themeToggle { display: none; }
+  .floating-actions #toTop { right: 28px; bottom: 28px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) { .tn-weekend b { display: none; } .tn-weekend { padding-right: 8px; } }
+
+.floating-actions #toTop {
+  position: fixed; width: 54px; height: 54px; padding: 0; display: grid; place-items: center;
+  background: var(--card-hover); font-size: 0;
+}
+#toTop .tt-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+#toTop .tt-ring circle {
+  fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round;
+  stroke-dasharray: 132; stroke-dashoffset: calc(132 * (1 - var(--p, 0)));
+  filter: drop-shadow(0 0 4px var(--accent));
+}
+#toTop .tt-arrow { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s; }
+#toTop:hover .tt-arrow { animation: ttBounce 0.8s ease infinite; }
+@keyframes ttBounce { 50% { transform: translateY(-4px); } }

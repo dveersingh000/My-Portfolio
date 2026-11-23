@@ -294,7 +294,7 @@
     themeBtn.id = "themeToggle";
     themeBtn.type = "button";
     themeBtn.setAttribute("aria-label", "Toggle light and dark theme");
-    var topBtn = el("button", "", "&#8679;");
+    var topBtn = el("button", "", '<svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"></circle></svg><svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"></path></svg>');
     topBtn.id = "toTop";
     topBtn.type = "button";
     topBtn.setAttribute("aria-label", "Back to top");
@@ -304,6 +304,7 @@
 
     function paintThemeIcon() {
       var dark = root.getAttribute("data-theme") === "dark";
+      var tnT = document.getElementById("tnTheme"); if (tnT) tnT.innerHTML = dark ? "&#9728;" : "&#9790;";
       themeBtn.innerHTML = '<span class="ti">' + (dark ? "&#9728;" : "&#9790;") + '</span><span class="tl">' + (dark ? "Light mode" : "Dark mode") + "</span>";
     }
     paintThemeIcon();
@@ -492,12 +493,15 @@
     if (topnav) {
       var tlinks = Array.prototype.slice.call(topnav.querySelectorAll(".tn-links a"));
       var secs = tlinks.map(function (a) { return document.getElementById(a.getAttribute("data-spy")); });
-      var tprog = topnav.querySelector(".tn-progress");
+      var tprog = topnav.querySelector(".tn-progress"); var ttop = document.getElementById("toTop");
+      var tnTheme = document.getElementById("tnTheme");
+      if (tnTheme) tnTheme.addEventListener("click", function () { document.getElementById("themeToggle").click(); });
       var spy = function () {
         var y = window.scrollY;
         topnav.classList.toggle("scrolled", y > 20);
         var h = document.documentElement.scrollHeight - window.innerHeight;
         tprog.style.width = (h > 0 ? y / h * 100 : 0) + "%";
+        if (ttop) ttop.style.setProperty("--p", h > 0 ? y / h : 0);
         var line = window.innerHeight * 0.35, cur = 0;
         secs.forEach(function (s, i) {
           if (s && s.getBoundingClientRect().top <= line) cur = i;
